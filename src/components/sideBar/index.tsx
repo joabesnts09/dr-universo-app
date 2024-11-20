@@ -1,3 +1,4 @@
+'use client'
 import {
   Sheet,
   SheetTrigger,
@@ -21,37 +22,65 @@ import {
   Tooltip,
   TooltipTrigger,
   TooltipContent,
-} from '@radix-ui/react-tooltip'
+} from '@/components/ui/tooltip'
+import { ThemeSwitcher } from '../themeSwitcher'
+import { useState } from 'react'
 
 export const SideBar = () => {
+  const [openSidebar, setOpenSidebar] = useState<boolean>(false)
+
+  const handleOpenSidebar = () => {
+    setOpenSidebar(!openSidebar)
+  }
+
   return (
     <>
       <div className='flex w-full flex-col '>
-        <aside className='fixed inset-y-0 left-0 z-10 hidden w-14 border-r bg-background sm:flex flex-col'>
-          <nav className='flex flex-col items-center gap-4 px-2 py-5'>
+        <aside className={`fixed inset-y-0 left-0 z-10 hidden w-14 border-r bg-background sm:flex flex-col 
+          ${openSidebar && 'w-[300px] '}
+          `}>
+          <nav className={`w-full flex flex-col gap-4 px-2 py-5 
+            ${openSidebar ? 'items-start': 'items-center'}
+            `}>
             <TooltipProvider>
+              <div>
+                <Button
+                  className='h-max w-max flex gap-4 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground bg-transparent hover:bg-[#000000E6]'
+                  onClick={handleOpenSidebar}
+                >
+                  
+                  <PanelLeftOpenIcon className={`h-5 w-5 transition duration-500 ${openSidebar && 'rotate-180'}`} />
+                  
+                  <span className={`${!openSidebar && 'sr-only'}`}>Abrir / Fechar Sidebar</span>
+                </Button>
+              </div>
+
+              <div className='border-b w-full'></div>
+
               <Link
                 href='#'
-                className='w-6 h-6 flex bg-primary rounded-full text-lg items-center justify-center text-primary-foreground md:text-base'
+                className='w-max h-max flex gap-4 bg-transparent text-lg items-center justify-center text-primary-foreground md:text-base'
                 prefetch={false}
               >
                 <Image
                   src={LogoMain}
                   alt='logo'
-                  className='rounded-full shrink-0'
+                  className='h-9 w-9 rounded-sm shrink-0'
                 />
-                <span className='sr-only'>Logo do site</span>
+                <p className={`${!openSidebar && 'sr-only'}`}>Logo do site</p>
               </Link>
+
+              <div className='border-b w-full'></div>
 
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Link
                     href='#'
-                    className='h-9 w-9 flex shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground'
+                    className='h-max w-max flex gap-4 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground'
                     prefetch={false}
                   >
                     <Home className='h-5 w-5' />
-                    <span className='sr-only'>Início</span>
+                    <p className={`${!openSidebar && 'sr-only'}`}>Início</p>
                   </Link>
                 </TooltipTrigger>
                 <TooltipContent side='right'>Início</TooltipContent>
@@ -61,25 +90,27 @@ export const SideBar = () => {
                 <TooltipTrigger asChild>
                   <Link
                     href='#'
-                    className='h-9 w-9 flex shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground'
+                    className='h-max w-max flex gap-4 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground'
                     prefetch={false}
                   >
                     <CalendarCheck className='h-5 w-5' />
-                    <span className='sr-only'>Calendário de Eventos</span>
+                    <p className={`${!openSidebar && 'sr-only'}`}>Calendário de Eventos</p>
                   </Link>
                 </TooltipTrigger>
-                <TooltipContent side='right'>Calendário de Eventos</TooltipContent>
+                <TooltipContent side='right'>
+                  Calendário de Eventos
+                </TooltipContent>
               </Tooltip>
 
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Link
                     href='#'
-                    className='h-9 w-9 flex shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground'
+                    className='h-max w-max flex gap-4 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground'
                     prefetch={false}
                   >
                     <BookMinus className='h-5 w-5' />
-                    <span className='sr-only'>Artigos</span>
+                    <p className={`${!openSidebar && 'sr-only'}`}>Artigos</p>
                   </Link>
                 </TooltipTrigger>
                 <TooltipContent side='right'>Artigos</TooltipContent>
@@ -89,16 +120,20 @@ export const SideBar = () => {
                 <TooltipTrigger asChild>
                   <Link
                     href='#'
-                    className='h-9 w-9 flex shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground'
+                    className='h-max w-max flex gap-4 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground'
                     prefetch={false}
                   >
                     <Contact2 className='h-5 w-5' />
-                    <span className='sr-only'>Contatos</span>
+                    <p className={`${!openSidebar && 'sr-only'}`}>Contatos</p>
                   </Link>
                 </TooltipTrigger>
                 <TooltipContent side='right'>Contatos</TooltipContent>
               </Tooltip>
             </TooltipProvider>
+
+            <div className='border-b w-full'></div>
+
+            <ThemeSwitcher openSidebar={openSidebar} />
           </nav>
         </aside>
 
@@ -128,7 +163,7 @@ export const SideBar = () => {
                     <Image
                       src={LogoMain}
                       alt='logo'
-                      className='rounded-full shrink-0'
+                      className='rounded-lg shrink-0'
                     />
                     <span className='sr-only'>Logo do site</span>
                   </Link>

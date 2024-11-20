@@ -3,6 +3,7 @@ import localFont from 'next/font/local'
 import './globals.css'
 import { cn } from '@/lib/utils'
 import { SideBar } from '@/components/sideBar'
+import { ThemeProvider } from '@/provider/themeProvider'
 
 const geistSans = localFont({
   src: './fonts/GeistVF.woff',
@@ -26,7 +27,7 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang='en'>
+    <html lang='pt-BR'>
       <body
         className={
           cn(
@@ -36,8 +37,14 @@ export default function RootLayout({
           )
         }
       >
-        <SideBar />
-        {children}
+        <ThemeProvider
+          attribute='class'
+          defaultTheme='system'
+          enableSystem={true}
+        >
+          <SideBar />
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   )
