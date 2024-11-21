@@ -28,48 +28,67 @@ import { useState } from 'react'
 
 export const SideBar = () => {
   const [openSidebar, setOpenSidebar] = useState<boolean>(false)
+  const [pageSelected, setPageSelected] = useState<boolean>(false)
 
   const handleOpenSidebar = () => {
     setOpenSidebar(!openSidebar)
+  }
+  const handlePageMenu = () => {
+    setPageSelected(!pageSelected)
   }
 
   return (
     <>
       <div className='flex w-full flex-col '>
-        <aside className={`fixed inset-y-0 left-0 z-10 hidden w-14 border-r bg-background sm:flex flex-col 
+        <aside
+          className={`fixed inset-y-0 left-0 z-10 hidden w-14 border-r bg-background sm:flex flex-col 
           ${openSidebar && 'w-[300px] '}
-          `}>
-          <nav className={`w-full flex flex-col gap-4 px-2 py-5 
-            ${openSidebar ? 'items-start': 'items-center'}
-            `}>
+          `}
+        >
+          <nav
+            className={`w-full flex flex-col gap-4 px-2 py-5 
+            ${openSidebar ? 'items-start' : 'items-center'}
+            `}
+          >
             <TooltipProvider>
-              <div>
+              <div className='w-full h-max'>
                 <Button
-                  className='h-9 w-max flex gap-4 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground bg-transparent hover:bg-[#000000E6]'
+                  className='h-9 w-full flex gap-4 shrink-0 items-center justify-start rounded-lg text-muted-foreground transition-colors hover:text-foreground bg-transparent hover:bg-bgBtnColor'
                   onClick={handleOpenSidebar}
                 >
-                  
-                  <PanelLeftOpenIcon className={`h-5 w-5 transition duration-500 ${openSidebar && 'rotate-180'}`} />
-                  
-                  <span className={`${!openSidebar && 'sr-only'}`}>Abrir / Fechar Sidebar</span>
+                  <PanelLeftOpenIcon
+                    className={`h-5 w-5 transition duration-500 ${
+                      openSidebar && 'rotate-180'
+                    }`}
+                  />
+
+                  <p className={`${!openSidebar && 'sr-only'}`}>
+                    Abrir / Fechar Sidebar
+                  </p>
                 </Button>
               </div>
 
               <div className='border-b w-full'></div>
-                <Link
-                  href='#'
-                  className={`w-full h-9 flex gap-4 bg-transparent text-lg items-center text-primary-foreground md:text-base`}
-                  prefetch={false}
-                >
-                  <div className="flex gap-4">
-                    <Image
-                      src={LogoMain}
-                      alt='logo'
-                      className='h-9 w-9 rounded-sm shrink-0'
-                    />
-                    <p className={`text-muted-foreground transition-colors hover:text-foreground ${!openSidebar && 'sr-only'}`}>Doutor Universo</p>  
-                  </div>
-                </Link>
+              <Link
+                href='#'
+                className={`w-full h-9 flex gap-4 bg-transparent text-lg items-center text-primary-foreground md:text-base`}
+                prefetch={false}
+              >
+                <div className='flex gap-4'>
+                  <Image
+                    src={LogoMain}
+                    alt='logo'
+                    className='h-9 w-9 rounded-sm shrink-0'
+                  />
+                  <p
+                    className={`text-muted-foreground transition-colors hover:text-foreground ${
+                      !openSidebar && 'sr-only'
+                    }`}
+                  >
+                    Doutor Universo
+                  </p>
+                </div>
+              </Link>
 
               <div className='border-b w-full'></div>
 
@@ -77,32 +96,42 @@ export const SideBar = () => {
                 <TooltipTrigger asChild>
                   <Link
                     href='#'
-                    className='w-full h-9 flex gap-4 shrink-0 items-center justify-start rounded-lg text-muted-foreground transition-colors hover:text-foreground'
+                    className={`w-full h-9 flex gap-4 shrink-0 items-center justify-start rounded-lg text-muted-foreground transition-colors hover:text-foreground ${'bg-bgBtnColor rounded-lg'}`}
                     prefetch={false}
                   >
-                    <div className="flex gap-4 items-center">
+                    <div className='flex gap-4 items-center'>
                       <Home className='h-5 w-5 mx-2' />
                       <p className={`${!openSidebar && 'sr-only'}`}>Início</p>
                     </div>
                   </Link>
                 </TooltipTrigger>
-                <TooltipContent side='right'>Início</TooltipContent>
+                <TooltipContent
+                  side='right'
+                  className={`${openSidebar && 'sr-only'}`}
+                >
+                  Início
+                </TooltipContent>
               </Tooltip>
 
               <Tooltip>
                 <TooltipTrigger asChild>
-                    <Link
-                      href='#'
-                      className='w-full h-9 flex gap-4 shrink-0 items-center justify-start rounded-lg text-muted-foreground transition-colors hover:text-foreground'
-                      prefetch={false}
-                    >
-                      <div className="flex gap-4 items-center">
-                        <CalendarCheck className='h-5 w-5 mx-2' />
-                        <p className={`${!openSidebar && 'sr-only'}`}>Calendário de Eventos</p>
-                      </div>
-                    </Link>
+                  <Link
+                    href='#'
+                    className='w-full h-9 flex gap-4 shrink-0 items-center justify-start rounded-lg text-muted-foreground transition-colors hover:text-foreground '
+                    prefetch={false}
+                  >
+                    <div className='flex gap-4 items-center'>
+                      <CalendarCheck className='h-5 w-5 mx-2' />
+                      <p className={`${!openSidebar && 'sr-only'}`}>
+                        Calendário de Eventos
+                      </p>
+                    </div>
+                  </Link>
                 </TooltipTrigger>
-                <TooltipContent side='right'>
+                <TooltipContent
+                  side='right'
+                  className={`${openSidebar && 'sr-only'}`}
+                >
                   Calendário de Eventos
                 </TooltipContent>
               </Tooltip>
@@ -114,29 +143,39 @@ export const SideBar = () => {
                     className='h-9 w-full flex gap-4 shrink-0 items-center justify-start rounded-lg text-muted-foreground transition-colors hover:text-foreground'
                     prefetch={false}
                   >
-                    <div className="flex gap-4 items-center">
+                    <div className='flex gap-4 items-center'>
                       <BookMinus className='h-5 w-5 mx-2' />
                       <p className={`${!openSidebar && 'sr-only'}`}>Artigos</p>
                     </div>
                   </Link>
                 </TooltipTrigger>
-                <TooltipContent side='right'>Artigos</TooltipContent>
+                <TooltipContent
+                  side='right'
+                  className={`${openSidebar && 'sr-only'}`}
+                >
+                  Artigos
+                </TooltipContent>
               </Tooltip>
 
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Link
-                      href='#'
-                      className='h-9 w-full flex gap-4 shrink-0 items-center justify-start rounded-lg text-muted-foreground transition-colors hover:text-foreground'
-                      prefetch={false}
+                    href='#'
+                    className='h-9 w-full flex gap-4 shrink-0 items-center justify-start rounded-lg text-muted-foreground transition-colors hover:text-foreground'
+                    prefetch={false}
                   >
-                    <div className="flex gap-4 items-center">
+                    <div className='flex gap-4 items-center'>
                       <Contact2 className='h-5 w-5 mx-2' />
                       <p className={`${!openSidebar && 'sr-only'}`}>Contatos</p>
                     </div>
                   </Link>
                 </TooltipTrigger>
-                <TooltipContent side='right'>Contatos</TooltipContent>
+                <TooltipContent
+                  side='right'
+                  className={`${openSidebar && 'sr-only'}`}
+                >
+                  Contatos
+                </TooltipContent>
               </Tooltip>
             </TooltipProvider>
 
@@ -177,7 +216,9 @@ export const SideBar = () => {
                       />
                       <span className='sr-only'>Logo do site</span>
                     </Link>
-                    <p className='text-muted-foreground hover:text-foreground'>Doutor Universo</p>
+                    <p className='text-muted-foreground hover:text-foreground'>
+                      Doutor Universo
+                    </p>
                   </div>
 
                   <Link

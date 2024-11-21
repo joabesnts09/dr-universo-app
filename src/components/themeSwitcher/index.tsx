@@ -50,7 +50,7 @@ export const ThemeSwitcher = ({ openSidebar }: IThemeSwitcherProps) => {
         relative w-14 h-8 flex items-center rounded-full p-1 
         ${
           theme === 'dark'
-            ? 'justify-end bg-gray-700'
+            ? 'justify-end bg-gray-600'
             : 'justify-start bg-yellow-300'
         }`}
               onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
