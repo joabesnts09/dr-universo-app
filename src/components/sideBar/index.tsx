@@ -45,7 +45,7 @@ export const SideBar = () => {
             <TooltipProvider>
               <div>
                 <Button
-                  className='h-max w-max flex gap-4 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground bg-transparent hover:bg-[#000000E6]'
+                  className='h-9 w-max flex gap-4 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground bg-transparent hover:bg-[#000000E6]'
                   onClick={handleOpenSidebar}
                 >
                   
@@ -56,19 +56,20 @@ export const SideBar = () => {
               </div>
 
               <div className='border-b w-full'></div>
-
-              <Link
-                href='#'
-                className='w-max h-max flex gap-4 bg-transparent text-lg items-center justify-center text-primary-foreground md:text-base'
-                prefetch={false}
-              >
-                <Image
-                  src={LogoMain}
-                  alt='logo'
-                  className='h-9 w-9 rounded-sm shrink-0'
-                />
-                <p className={`${!openSidebar && 'sr-only'}`}>Logo do site</p>
-              </Link>
+                <Link
+                  href='#'
+                  className={`w-full h-9 flex gap-4 bg-transparent text-lg items-center text-primary-foreground md:text-base`}
+                  prefetch={false}
+                >
+                  <div className="flex gap-4">
+                    <Image
+                      src={LogoMain}
+                      alt='logo'
+                      className='h-9 w-9 rounded-sm shrink-0'
+                    />
+                    <p className={`text-muted-foreground transition-colors hover:text-foreground ${!openSidebar && 'sr-only'}`}>Doutor Universo</p>  
+                  </div>
+                </Link>
 
               <div className='border-b w-full'></div>
 
@@ -76,11 +77,13 @@ export const SideBar = () => {
                 <TooltipTrigger asChild>
                   <Link
                     href='#'
-                    className='h-max w-max flex gap-4 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground'
+                    className='w-full h-9 flex gap-4 shrink-0 items-center justify-start rounded-lg text-muted-foreground transition-colors hover:text-foreground'
                     prefetch={false}
                   >
-                    <Home className='h-5 w-5' />
-                    <p className={`${!openSidebar && 'sr-only'}`}>Início</p>
+                    <div className="flex gap-4 items-center">
+                      <Home className='h-5 w-5 mx-2' />
+                      <p className={`${!openSidebar && 'sr-only'}`}>Início</p>
+                    </div>
                   </Link>
                 </TooltipTrigger>
                 <TooltipContent side='right'>Início</TooltipContent>
@@ -88,14 +91,16 @@ export const SideBar = () => {
 
               <Tooltip>
                 <TooltipTrigger asChild>
-                  <Link
-                    href='#'
-                    className='h-max w-max flex gap-4 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground'
-                    prefetch={false}
-                  >
-                    <CalendarCheck className='h-5 w-5' />
-                    <p className={`${!openSidebar && 'sr-only'}`}>Calendário de Eventos</p>
-                  </Link>
+                    <Link
+                      href='#'
+                      className='w-full h-9 flex gap-4 shrink-0 items-center justify-start rounded-lg text-muted-foreground transition-colors hover:text-foreground'
+                      prefetch={false}
+                    >
+                      <div className="flex gap-4 items-center">
+                        <CalendarCheck className='h-5 w-5 mx-2' />
+                        <p className={`${!openSidebar && 'sr-only'}`}>Calendário de Eventos</p>
+                      </div>
+                    </Link>
                 </TooltipTrigger>
                 <TooltipContent side='right'>
                   Calendário de Eventos
@@ -106,11 +111,13 @@ export const SideBar = () => {
                 <TooltipTrigger asChild>
                   <Link
                     href='#'
-                    className='h-max w-max flex gap-4 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground'
+                    className='h-9 w-full flex gap-4 shrink-0 items-center justify-start rounded-lg text-muted-foreground transition-colors hover:text-foreground'
                     prefetch={false}
                   >
-                    <BookMinus className='h-5 w-5' />
-                    <p className={`${!openSidebar && 'sr-only'}`}>Artigos</p>
+                    <div className="flex gap-4 items-center">
+                      <BookMinus className='h-5 w-5 mx-2' />
+                      <p className={`${!openSidebar && 'sr-only'}`}>Artigos</p>
+                    </div>
                   </Link>
                 </TooltipTrigger>
                 <TooltipContent side='right'>Artigos</TooltipContent>
@@ -119,12 +126,14 @@ export const SideBar = () => {
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Link
-                    href='#'
-                    className='h-max w-max flex gap-4 shrink-0 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:text-foreground'
-                    prefetch={false}
+                      href='#'
+                      className='h-9 w-full flex gap-4 shrink-0 items-center justify-start rounded-lg text-muted-foreground transition-colors hover:text-foreground'
+                      prefetch={false}
                   >
-                    <Contact2 className='h-5 w-5' />
-                    <p className={`${!openSidebar && 'sr-only'}`}>Contatos</p>
+                    <div className="flex gap-4 items-center">
+                      <Contact2 className='h-5 w-5 mx-2' />
+                      <p className={`${!openSidebar && 'sr-only'}`}>Contatos</p>
+                    </div>
                   </Link>
                 </TooltipTrigger>
                 <TooltipContent side='right'>Contatos</TooltipContent>
@@ -155,18 +164,21 @@ export const SideBar = () => {
                 </SheetDescription>
 
                 <nav className='grid gap-6 text-lg font-medium'>
-                  <Link
-                    href='#'
-                    className='w-10 h-10 flex bg-primary rounded-full text-lg items-center justify-center text-primary-foreground md:text-base'
-                    prefetch={false}
-                  >
-                    <Image
-                      src={LogoMain}
-                      alt='logo'
-                      className='rounded-lg shrink-0'
-                    />
-                    <span className='sr-only'>Logo do site</span>
-                  </Link>
+                  <div className='flex items-center justify-start gap-4'>
+                    <Link
+                      href='#'
+                      className='w-10 h-10 flex bg-primary rounded-full text-lg items-center justify-center text-primary-foreground md:text-base'
+                      prefetch={false}
+                    >
+                      <Image
+                        src={LogoMain}
+                        alt='logo'
+                        className='rounded-lg shrink-0'
+                      />
+                      <span className='sr-only'>Logo do site</span>
+                    </Link>
+                    <p className='text-muted-foreground hover:text-foreground'>Doutor Universo</p>
+                  </div>
 
                   <Link
                     href='#'

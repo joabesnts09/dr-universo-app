@@ -24,8 +24,8 @@ export const ThemeSwitcher = ({ openSidebar }: IThemeSwitcherProps) => {
       {openSidebar ? (
         <div className={`w-full flex justify-between items-center rounded-lg py-2 px-4
         ${theme === 'dark'
-          ? ' bg-gray-500 hover:bg-gray-400'
-          : ' bg-yellow-300 hover:bg-yellow-200'}`}>
+          ? ' bg-gray-700 hover:bg-gray-500'
+          : ' bg-yellow-200 hover:bg-yellow-100'}`}>
 
           <div className='flex items-center gap-4'>
             {
@@ -79,7 +79,7 @@ export const ThemeSwitcher = ({ openSidebar }: IThemeSwitcherProps) => {
           ${
             theme === 'dark'
               ? 'justify-end bg-gray-700 hover:bg-gray-500'
-              : 'justify-start bg-yellow-300 hover:bg-yellow-200'
+              : 'justify-start bg-yellow-200 hover:bg-yellow-100'
           }
           `}
         >
