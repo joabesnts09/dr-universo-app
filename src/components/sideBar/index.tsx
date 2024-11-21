@@ -74,7 +74,7 @@ export const SideBar = () => {
                 className={`w-full h-9 flex gap-4 bg-transparent text-lg items-center text-primary-foreground md:text-base`}
                 prefetch={false}
               >
-                <div className='flex gap-4'>
+                <div className='flex gap-4 items-center'>
                   <Image
                     src={LogoMain}
                     alt='logo'
@@ -96,7 +96,9 @@ export const SideBar = () => {
                 <TooltipTrigger asChild>
                   <Link
                     href='#'
-                    className={`w-full h-9 flex gap-4 shrink-0 items-center justify-start rounded-lg  transition-colors hover:text-foreground hover:bg-hoverBgBtn ${ pageSelected ? 'text-foreground bg-bgBtnColor rounded-lg' : 'text-muted-foreground'}`}
+                    className={`w-full h-9 flex gap-4 shrink-0 items-center rounded-lg  transition-colors hover:text-foreground hover:bg-hoverBgBtn ${ pageSelected ? 'text-foreground bg-bgBtnColor rounded-lg' : 'text-muted-foreground'}
+                    ${openSidebar ? 'justify-start pl-[2px]': 'justify-center'}
+                  `}
                     prefetch={false}
                   >
                     <div className='flex gap-4 items-center'>
@@ -117,7 +119,9 @@ export const SideBar = () => {
                 <TooltipTrigger asChild>
                   <Link
                     href='#'
-                    className={`w-full h-9 flex gap-4 shrink-0 items-center justify-start rounded-lg  transition-colors hover:text-foreground hover:bg-hoverBgBtn ${ pageSelected ? 'text-foreground bg-bgBtnColor rounded-lg' : 'text-muted-foreground'}`}
+                    className={`w-full h-9 flex gap-4 shrink-0 items-center rounded-lg  transition-colors hover:text-foreground hover:bg-hoverBgBtn ${ pageSelected ? 'text-foreground bg-bgBtnColor rounded-lg' : 'text-muted-foreground'}
+                    ${openSidebar ? 'justify-start pl-[2px]': 'justify-center'}
+                    `}
                     prefetch={false}
                   >
                     <div className='flex gap-4 items-center'>
@@ -140,7 +144,9 @@ export const SideBar = () => {
                 <TooltipTrigger asChild>
                   <Link
                     href='#'
-                    className={`w-full h-9 flex gap-4 shrink-0 items-center justify-start rounded-lg  transition-colors hover:text-foreground hover:bg-hoverBgBtn ${ pageSelected ? 'text-foreground bg-bgBtnColor rounded-lg' : 'text-muted-foreground'}`}
+                    className={`w-full h-9 flex gap-4 shrink-0 items-center rounded-lg  transition-colors hover:text-foreground hover:bg-hoverBgBtn ${ pageSelected ? 'text-foreground bg-bgBtnColor rounded-lg' : 'text-muted-foreground'}
+                    ${openSidebar ? 'justify-start pl-[2px]': 'justify-center'}
+                    `}
                     prefetch={false}
                   >
                     <div className='flex gap-4 items-center'>
@@ -161,7 +167,9 @@ export const SideBar = () => {
                 <TooltipTrigger asChild>
                   <Link
                     href='#'
-                    className={`w-full h-9 flex gap-4 shrink-0 items-center justify-start rounded-lg  transition-colors hover:text-foreground hover:bg-hoverBgBtn ${ pageSelected ? 'text-foreground bg-bgBtnColor rounded-lg' : 'text-muted-foreground'}`}
+                    className={`w-full h-9 flex gap-4 shrink-0 items-center rounded-lg  transition-colors hover:text-foreground hover:bg-hoverBgBtn ${ pageSelected ? 'text-foreground bg-bgBtnColor rounded-lg' : 'text-muted-foreground'}
+                    ${openSidebar ? 'justify-start pl-[2px]': 'justify-center'}
+                    `}
                     prefetch={false}
                   >
                     <div className='flex gap-4 items-center'>
