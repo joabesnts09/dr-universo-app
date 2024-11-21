@@ -43,6 +43,7 @@ body {
     --sidebar-ring: 217.2 91.2% 59.8%;
     --border-color: #141414;
     --bgBtnColor: #F2F2F2;
+    --hoverBgBtn: #cacaca;
   }
   
   .dark {
@@ -80,6 +81,7 @@ body {
     --sidebar-ring: 204.8 86% 60%;
     --border-color: #666666;
     --bgBtnColor: #3F3F3F;
+    --hoverBgBtn: #525252;
   }
 }
 

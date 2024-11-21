@@ -53,7 +53,7 @@ export const SideBar = () => {
             <TooltipProvider>
               <div className='w-full h-max'>
                 <Button
-                  className='h-9 w-full flex gap-4 shrink-0 items-center justify-start rounded-lg text-muted-foreground transition-colors hover:text-foreground bg-transparent hover:bg-bgBtnColor'
+                  className={`h-9 w-full flex gap-4 shrink-0 items-center justify-start rounded-lg text-muted-foreground transition-colors hover:text-foreground bg-transparent hover:bg-hoverBgBtn ${openSidebar? 'justify-start': 'justify-center' }`}
                   onClick={handleOpenSidebar}
                 >
                   <PanelLeftOpenIcon
@@ -96,7 +96,7 @@ export const SideBar = () => {
                 <TooltipTrigger asChild>
                   <Link
                     href='#'
-                    className={`w-full h-9 flex gap-4 shrink-0 items-center justify-start rounded-lg text-muted-foreground transition-colors hover:text-foreground ${'bg-bgBtnColor rounded-lg'}`}
+                    className={`w-full h-9 flex gap-4 shrink-0 items-center justify-start rounded-lg  transition-colors hover:text-foreground hover:bg-hoverBgBtn ${ pageSelected ? 'text-foreground bg-bgBtnColor rounded-lg' : 'text-muted-foreground'}`}
                     prefetch={false}
                   >
                     <div className='flex gap-4 items-center'>
@@ -117,7 +117,7 @@ export const SideBar = () => {
                 <TooltipTrigger asChild>
                   <Link
                     href='#'
-                    className='w-full h-9 flex gap-4 shrink-0 items-center justify-start rounded-lg text-muted-foreground transition-colors hover:text-foreground '
+                    className={`w-full h-9 flex gap-4 shrink-0 items-center justify-start rounded-lg  transition-colors hover:text-foreground hover:bg-hoverBgBtn ${ pageSelected ? 'text-foreground bg-bgBtnColor rounded-lg' : 'text-muted-foreground'}`}
                     prefetch={false}
                   >
                     <div className='flex gap-4 items-center'>
@@ -140,7 +140,7 @@ export const SideBar = () => {
                 <TooltipTrigger asChild>
                   <Link
                     href='#'
-                    className='h-9 w-full flex gap-4 shrink-0 items-center justify-start rounded-lg text-muted-foreground transition-colors hover:text-foreground'
+                    className={`w-full h-9 flex gap-4 shrink-0 items-center justify-start rounded-lg  transition-colors hover:text-foreground hover:bg-hoverBgBtn ${ pageSelected ? 'text-foreground bg-bgBtnColor rounded-lg' : 'text-muted-foreground'}`}
                     prefetch={false}
                   >
                     <div className='flex gap-4 items-center'>
@@ -161,7 +161,7 @@ export const SideBar = () => {
                 <TooltipTrigger asChild>
                   <Link
                     href='#'
-                    className='h-9 w-full flex gap-4 shrink-0 items-center justify-start rounded-lg text-muted-foreground transition-colors hover:text-foreground'
+                    className={`w-full h-9 flex gap-4 shrink-0 items-center justify-start rounded-lg  transition-colors hover:text-foreground hover:bg-hoverBgBtn ${ pageSelected ? 'text-foreground bg-bgBtnColor rounded-lg' : 'text-muted-foreground'}`}
                     prefetch={false}
                   >
                     <div className='flex gap-4 items-center'>
