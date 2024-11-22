@@ -75,7 +75,7 @@ export const ThemeSwitcher = ({ openSidebar }: IThemeSwitcherProps) => {
       ) : (
         <Button
           onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
-          className={`transition-opacity py-6
+          className={`transition-opacity py-6 
           ${
             theme === 'dark'
               ? 'justify-end bg-gray-700 hover:bg-gray-500'

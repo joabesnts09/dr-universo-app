@@ -43,17 +43,21 @@ export const SideBar = () => {
         <aside
           className={`fixed inset-y-0 left-0 z-10 hidden w-14 border-r bg-background sm:flex flex-col 
           ${openSidebar && 'w-[300px] '}
+          transition-all duration-200 ease-out
           `}
         >
           <nav
             className={`w-full flex flex-col gap-4 px-2 py-5 
             ${openSidebar ? 'items-start' : 'items-center'}
+            transition-all duration-300 ease-in
             `}
           >
             <TooltipProvider>
               <div className='w-full h-max'>
                 <Button
-                  className={`h-9 w-full flex gap-4 shrink-0 items-center justify-start rounded-lg text-muted-foreground transition-colors hover:text-foreground bg-transparent hover:bg-hoverBgBtn ${openSidebar? 'justify-start': 'justify-center' }`}
+                  className={`h-9 w-full flex gap-4 shrink-0 items-center justify-start rounded-lg text-muted-foreground transition-colors hover:text-foreground bg-transparent hover:bg-hoverBgBtn ${
+                    openSidebar ? 'justify-start' : 'justify-center'
+                  }`}
                   onClick={handleOpenSidebar}
                 >
                   <PanelLeftOpenIcon
@@ -62,7 +66,7 @@ export const SideBar = () => {
                     }`}
                   />
 
-                  <p className={`${!openSidebar && 'sr-only'}`}>
+                  <p className={`${!openSidebar && 'sr-only' }`}>
                     Abrir / Fechar Sidebar
                   </p>
                 </Button>
@@ -81,7 +85,7 @@ export const SideBar = () => {
                     className='h-9 w-9 rounded-sm shrink-0'
                   />
                   <p
-                    className={`text-muted-foreground transition-colors hover:text-foreground ${
+                    className={`text-muted-foreground transition-colors hover:text-foreground text-nowrap ${
                       !openSidebar && 'sr-only'
                     }`}
                   >
@@ -96,8 +100,12 @@ export const SideBar = () => {
                 <TooltipTrigger asChild>
                   <Link
                     href='#'
-                    className={`w-full h-9 flex gap-4 shrink-0 items-center rounded-lg  transition-colors hover:text-foreground hover:bg-hoverBgBtn ${ pageSelected ? 'text-foreground bg-bgBtnColor rounded-lg' : 'text-muted-foreground'}
-                    ${openSidebar ? 'justify-start pl-[2px]': 'justify-center'}
+                    className={`w-full h-9 flex gap-4 shrink-0 items-center rounded-lg  transition-colors hover:text-foreground hover:bg-hoverBgBtn ${
+                      pageSelected
+                        ? 'text-foreground bg-bgBtnColor rounded-lg'
+                        : 'text-muted-foreground'
+                    }
+                    ${openSidebar ? 'justify-start pl-[2px]' : 'justify-center'}
                   `}
                     prefetch={false}
                   >
@@ -119,14 +127,18 @@ export const SideBar = () => {
                 <TooltipTrigger asChild>
                   <Link
                     href='#'
-                    className={`w-full h-9 flex gap-4 shrink-0 items-center rounded-lg  transition-colors hover:text-foreground hover:bg-hoverBgBtn ${ pageSelected ? 'text-foreground bg-bgBtnColor rounded-lg' : 'text-muted-foreground'}
-                    ${openSidebar ? 'justify-start pl-[2px]': 'justify-center'}
+                    className={`w-full h-9 flex gap-4 shrink-0 items-center rounded-lg  transition-colors hover:text-foreground hover:bg-hoverBgBtn ${
+                      pageSelected
+                        ? 'text-foreground bg-bgBtnColor rounded-lg'
+                        : 'text-muted-foreground'
+                    }
+                    ${openSidebar ? 'justify-start pl-[2px]' : 'justify-center'}
                     `}
                     prefetch={false}
                   >
                     <div className='flex gap-4 items-center'>
                       <CalendarCheck className='h-5 w-5 mx-2' />
-                      <p className={`${!openSidebar && 'sr-only'}`}>
+                      <p className={`text-nowrap ${!openSidebar && 'sr-only'}`}>
                         Calendário de Eventos
                       </p>
                     </div>
@@ -144,8 +156,12 @@ export const SideBar = () => {
                 <TooltipTrigger asChild>
                   <Link
                     href='#'
-                    className={`w-full h-9 flex gap-4 shrink-0 items-center rounded-lg  transition-colors hover:text-foreground hover:bg-hoverBgBtn ${ pageSelected ? 'text-foreground bg-bgBtnColor rounded-lg' : 'text-muted-foreground'}
-                    ${openSidebar ? 'justify-start pl-[2px]': 'justify-center'}
+                    className={`w-full h-9 flex gap-4 shrink-0 items-center rounded-lg  transition-colors hover:text-foreground hover:bg-hoverBgBtn ${
+                      pageSelected
+                        ? 'text-foreground bg-bgBtnColor rounded-lg'
+                        : 'text-muted-foreground'
+                    }
+                    ${openSidebar ? 'justify-start pl-[2px]' : 'justify-center'}
                     `}
                     prefetch={false}
                   >
@@ -167,8 +183,12 @@ export const SideBar = () => {
                 <TooltipTrigger asChild>
                   <Link
                     href='#'
-                    className={`w-full h-9 flex gap-4 shrink-0 items-center rounded-lg  transition-colors hover:text-foreground hover:bg-hoverBgBtn ${ pageSelected ? 'text-foreground bg-bgBtnColor rounded-lg' : 'text-muted-foreground'}
-                    ${openSidebar ? 'justify-start pl-[2px]': 'justify-center'}
+                    className={`w-full h-9 flex gap-4 shrink-0 items-center rounded-lg  transition-colors hover:text-foreground hover:bg-hoverBgBtn ${
+                      pageSelected
+                        ? 'text-foreground bg-bgBtnColor rounded-lg'
+                        : 'text-muted-foreground'
+                    }
+                    ${openSidebar ? 'justify-start pl-[2px]' : 'justify-center'}
                     `}
                     prefetch={false}
                   >
