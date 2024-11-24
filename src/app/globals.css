@@ -41,6 +41,10 @@ body {
     --sidebar-accent-foreground: 240 5.9% 10%;
     --sidebar-border: 220 13% 91%;
     --sidebar-ring: 217.2 91.2% 59.8%;
+    --btnViolet: 262 100% 65%;
+    --btnVioletHover: 261 100% 73%;
+    --titlePrimary: 261 81% 35%;
+    --textPrimary: 261 67% 9%;
     --border-color: #141414;
     --bgBtnColor: #F2F2F2;
     --hoverBgBtn: #cacaca;
@@ -79,6 +83,8 @@ body {
     --sidebar-accent-foreground: 0 0% 100%;
     --sidebar-border: 210 10% 20%;
     --sidebar-ring: 204.8 86% 60%;
+    --titlePrimary: 261 76% 58%;
+    --textPrimary: 259 61% 92%;
     --border-color: #666666;
     --bgBtnColor: #3F3F3F;
     --hoverBgBtn: #525252;

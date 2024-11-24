@@ -12,6 +12,10 @@ export default {
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))', 
+  			titlePrimary: 'hsl(var(--titlePrimary))', 
+  			btnViolet: 'hsl(var(--btnViolet))',
+  			btnVioletHover: 'hsl(var(--btnVioletHover))',
+  			textPrimary: 'hsl(var(--textPrimary))',
   			bgBtnColor: 'var(--bgBtnColor)', 
   			hoverBgBtn: 'var(--hoverBgBtn)', 
   			card: {
@@ -67,7 +71,10 @@ export default {
   			lg: 'var(--radius)',
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
-  		}
+  		},
+			// padding: {
+      //   '90p': '90%',
+      // },
   	}
   },
   plugins: [require("tailwindcss-animate")],
