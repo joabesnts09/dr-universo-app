@@ -25,10 +25,13 @@ import {
 } from '@/components/ui/tooltip'
 import { ThemeSwitcher } from '../themeSwitcher'
 import { useState } from 'react'
+import useHandleModal from '@/hooks/useSideBar'
 
 export const SideBar = () => {
   const [openSidebar, setOpenSidebar] = useState<boolean>(false)
   const [pageSelected, setPageSelected] = useState<boolean>(false)
+  const modalId: string = 'sidebarId'
+
 
   const handleOpenSidebar = () => {
     setOpenSidebar(!openSidebar)
@@ -37,10 +40,13 @@ export const SideBar = () => {
     setPageSelected(!pageSelected)
   }
 
+  useHandleModal('sidebarId', setOpenSidebar)
+
   return (
     <>
       <div className='flex w-full flex-col '>
         <aside
+          id={modalId}
           className={`fixed inset-y-0 left-0 z-10 hidden w-14 border-r bg-background sm:flex flex-col 
           ${openSidebar && 'w-[300px] '}
           transition-all duration-200 ease-out
@@ -284,6 +290,8 @@ export const SideBar = () => {
                     <Contact2 className='h-5 w-5 transition-all' />
                     Contatos
                   </Link>
+
+                  <ThemeSwitcher openSidebar={true}/>
                 </nav>
               </SheetContent>
             </Sheet>
