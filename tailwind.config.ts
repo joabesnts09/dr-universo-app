@@ -15,9 +15,12 @@ export default {
   			titlePrimary: 'hsl(var(--titlePrimary))', 
   			btnViolet: 'hsl(var(--btnViolet))',
   			btnVioletHover: 'hsl(var(--btnVioletHover))',
+  			btnBlue: 'hsl(var(--btnBlue))',
+  			btnBlueHover: 'hsl(var(--btnBlueHover))',
   			textPrimary: 'hsl(var(--textPrimary))',
   			bgBtnColor: 'var(--bgBtnColor)', 
   			hoverBgBtn: 'var(--hoverBgBtn)', 
+  			bgBlur: 'var(--bgBlur)', 
   			card: {
   				DEFAULT: 'hsl(var(--card))',
   				foreground: 'hsl(var(--card-foreground))'

@@ -6,9 +6,9 @@ import { Button } from '@/components/ui/button'
 export const BannerMain = () => {
   return (
     <>
-      <div className='flex flex-col items-center sm:flex-row sm:flex-wrap sm:justify-center sm:gap-5'>
-        <div className='w-max max-w-[400px] sm:min-w-[400px] sm:max-w-[700px]'>
-          <Image className='' src={illustrationSpace} alt='' />
+      <div className='w-full max-w-screen flex flex-col items-center sm:flex-row sm:flex-wrap sm:justify-center sm:gap-5'>
+        <div className='w-max sm:min-w-[400px] sm:max-w-[700px]'>
+          <Image className='w-full max-w-full  object-cover' src={illustrationSpace} alt='' />
         </div>
 
         <div className='w-full max-w-[570px] flex items-center justify-center flex-col gap-6 sm:min-w-[400px]'>
