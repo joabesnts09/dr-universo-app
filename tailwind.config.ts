@@ -75,9 +75,9 @@ export default {
   			md: 'calc(var(--radius) - 2px)',
   			sm: 'calc(var(--radius) - 4px)'
   		},
-			// padding: {
-      //   '90p': '90%',
-      // },
+			screens: {
+        'lf': '1100px', 
+      },
   	}
   },
   plugins: [require("tailwindcss-animate")],

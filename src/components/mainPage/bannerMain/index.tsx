@@ -6,9 +6,9 @@ import { Button } from '@/components/ui/button'
 export const BannerMain = () => {
   return (
     <>
-      <div className='w-full max-w-screen flex flex-col items-center sm:flex-row sm:flex-wrap sm:justify-center sm:gap-5'>
+      <div className='w-full max-w-screen flex flex-col items-center sm:flex-row sm:flex-wrap lf:flex-nowrap sm:justify-center sm:gap-5 2xl:justify-evenly'>
         <div className='w-max sm:min-w-[400px] sm:max-w-[700px]'>
-          <Image className='w-full max-w-full  object-cover' src={illustrationSpace} alt='' />
+          <Image className='w-full 2xl:w-[510px] object-cover' src={illustrationSpace} alt='Imagem de planetas, meteoros e estrelas' />
         </div>
 
         <div className='w-full max-w-[570px] flex items-center justify-center flex-col gap-6 sm:min-w-[400px]'>

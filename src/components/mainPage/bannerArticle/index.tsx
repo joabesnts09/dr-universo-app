@@ -47,9 +47,9 @@ const articleData: IArticles[] = [
 export const BannerArticle = () => {
   return (
     <>
-      <div className='flex flex-col w-full gap-5'>
+      <div className='flex flex-col w-full gap-10 xl:gap-16'>
         <div>
-          <h2 className='text-3xl font-bold tracking-tighter text-center text-textPrimary sm:text-4xl sm:text-start'>Confira os ultimos artigos postados.</h2>
+          <h2 className='text-3xl font-bold tracking-tighter text-center text-textPrimary sm:text-4xl'>Confira os ultimos artigos postados.</h2>
         </div>
 
         <div className='flex max-w-screen h-max sm:hidden'>
