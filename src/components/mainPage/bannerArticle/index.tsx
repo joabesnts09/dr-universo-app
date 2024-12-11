@@ -83,7 +83,7 @@ export const BannerArticle = () => {
 
                   <div>
                     <Link href='#' className='w-full'>
-                      <Button className='w-full bg-btnBlue hover:bg-btnBlueHover transition-colors delay-100'>
+                      <Button className='w-full bg-btnViolet hover:bg-btnVioletHover transition-colors delay-100'>
                         <p className='text-lg font-bold text-white hover:text-white transition-colors delay-100'>
                           Ver mais...
                         </p>
@@ -110,7 +110,7 @@ export const BannerArticle = () => {
 
                   <div>
                     <Link href='#' className='w-full'>
-                      <Button className='w-full bg-btnBlue hover:bg-btnBlueHover transition-colors delay-100'>
+                      <Button className='w-full bg-btnViolet hover:bg-btnVioletHover transition-colors delay-100'>
                         <p className='text-lg font-bold text-white hover:text-white transition-colors delay-100'>
                           Ver mais...
                         </p>
@@ -137,7 +137,7 @@ export const BannerArticle = () => {
 
                   <div>
                     <Link href='#' className='w-full'>
-                      <Button className='w-full bg-btnBlue hover:bg-btnBlueHover transition-colors delay-100'>
+                      <Button className='w-full bg-btnViolet hover:bg-btnVioletHover transition-colors delay-100'>
                         <p className='text-lg font-bold text-white hover:text-white transition-colors delay-100'>
                           Ver mais...
                         </p>
@@ -151,7 +151,6 @@ export const BannerArticle = () => {
             <CarouselNext /> */}
           </Carousel>
         </div>
-        
 
         <div className='hidden sm:flex'>
           <Carousel 
@@ -184,7 +183,7 @@ export const BannerArticle = () => {
 
                   <div>
                     <Link href='#' className='w-full'>
-                      <Button className='w-full bg-btnBlue hover:bg-btnBlueHover transition-colors delay-100'>
+                      <Button className='w-full bg-btnViolet hover:bg-btnVioletHover transition-colors delay-100'>
                         <p className='text-lg font-bold text-white hover:text-white transition-colors delay-100'>
                           Ver mais...
                         </p>
@@ -211,7 +210,7 @@ export const BannerArticle = () => {
 
                   <div>
                     <Link href='#' className='w-full'>
-                      <Button className='w-full bg-btnBlue hover:bg-btnBlueHover transition-colors delay-100'>
+                      <Button className='w-full bg-btnViolet hover:bg-btnVioletHover transition-colors delay-100'>
                         <p className='text-lg font-bold text-white hover:text-white transition-colors delay-100'>
                           Ver mais...
                         </p>
@@ -238,7 +237,7 @@ export const BannerArticle = () => {
 
                   <div>
                     <Link href='#' className='w-full'>
-                      <Button className='w-full bg-btnBlue hover:bg-btnBlueHover transition-colors delay-100'>
+                      <Button className='w-full bg-btnViolet hover:bg-btnVioletHover transition-colors delay-100'>
                         <p className='text-lg font-bold text-white hover:text-white transition-colors delay-100'>
                           Ver mais...
                         </p>
@@ -265,7 +264,7 @@ export const BannerArticle = () => {
 
                   <div>
                     <Link href='#' className='w-full'>
-                      <Button className='w-full bg-btnBlue hover:bg-btnBlueHover transition-colors delay-100'>
+                      <Button className='w-full bg-btnViolet hover:bg-btnVioletHover transition-colors delay-100'>
                         <p className='text-lg font-bold text-white hover:text-white transition-colors delay-100'>
                           Ver mais...
                         </p>
@@ -292,7 +291,7 @@ export const BannerArticle = () => {
 
                   <div>
                     <Link href='#' className='w-full'>
-                      <Button className='w-full bg-btnBlue hover:bg-btnBlueHover transition-colors delay-100'>
+                      <Button className='w-full bg-btnViolet hover:bg-btnVioletHover transition-colors delay-100'>
                         <p className='text-lg font-bold text-white hover:text-white transition-colors delay-100'>
                           Ver mais...
                         </p>
