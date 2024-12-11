@@ -143,10 +143,8 @@ export const SideBar = () => {
                     prefetch={false}
                   >
                     <div className='flex gap-4 items-center'>
-                      <CalendarCheck className='h-5 w-5 mx-2' />
-                      <p className={`text-nowrap ${!openSidebar && 'sr-only'}`}>
-                        Calendário de Eventos
-                      </p>
+                      <BookMinus className='h-5 w-5 mx-2' />
+                      <p className={`${!openSidebar && 'sr-only'}`}>Artigos</p>
                     </div>
                   </Link>
                 </TooltipTrigger>
@@ -154,7 +152,7 @@ export const SideBar = () => {
                   side='right'
                   className={`${openSidebar && 'sr-only'}`}
                 >
-                  Calendário de Eventos
+                  Artigos
                 </TooltipContent>
               </Tooltip>
 
@@ -172,8 +170,10 @@ export const SideBar = () => {
                     prefetch={false}
                   >
                     <div className='flex gap-4 items-center'>
-                      <BookMinus className='h-5 w-5 mx-2' />
-                      <p className={`${!openSidebar && 'sr-only'}`}>Artigos</p>
+                      <CalendarCheck className='h-5 w-5 mx-2' />
+                      <p className={`text-nowrap ${!openSidebar && 'sr-only'}`}>
+                        Calendário de Eventos
+                      </p>
                     </div>
                   </Link>
                 </TooltipTrigger>
@@ -181,7 +181,7 @@ export const SideBar = () => {
                   side='right'
                   className={`${openSidebar && 'sr-only'}`}
                 >
-                  Artigos
+                  Calendário de Eventos
                 </TooltipContent>
               </Tooltip>
 
@@ -220,7 +220,7 @@ export const SideBar = () => {
         </aside>
 
         <div className='sm:hidden flex flex-col sm:gap-4 sm:py-4 sm:pl-14 '>
-          <header className='sticky top-0 z-30 flex h-14 items-center px-4 border-b bg-background gap-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6'>
+          <header className='fixed w-full top-0 z-30 flex h-14 items-center px-4 border-b bg-background gap-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6'>
             <Sheet>
               <SheetTrigger asChild>
                 <Button size='icon' variant='outline' className='sm:hidden'>
@@ -269,8 +269,8 @@ export const SideBar = () => {
                     className='flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground'
                     prefetch={false}
                   >
-                    <CalendarCheck className='h-5 w-5 transition-all' />
-                    Calendário de Eventos
+                    <BookMinus className='h-5 w-5 transition-all' />
+                    Artigos
                   </Link>
 
                   <Link
@@ -278,8 +278,8 @@ export const SideBar = () => {
                     className='flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground'
                     prefetch={false}
                   >
-                    <BookMinus className='h-5 w-5 transition-all' />
-                    Artigos
+                    <CalendarCheck className='h-5 w-5 transition-all' />
+                    Calendário de Eventos
                   </Link>
 
                   <Link
