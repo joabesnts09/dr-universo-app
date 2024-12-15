@@ -18,6 +18,7 @@ export default {
   			btnBlue: 'hsl(var(--btnBlue))',
   			btnBlueHover: 'hsl(var(--btnBlueHover))',
   			textPrimary: 'hsl(var(--textPrimary))',
+  			textSecondary: 'hsl(var(--textSecondary))',
   			bgBtnColor: 'var(--bgBtnColor)', 
   			hoverBgBtn: 'var(--hoverBgBtn)', 
   			bgBlur: 'var(--bgBlur)', 

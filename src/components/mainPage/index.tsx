@@ -1,6 +1,7 @@
 import { AstronomicalEvents } from './astronomicalEvents'
 import { BannerArticle } from './bannerArticle'
 import { BannerMain } from './bannerMain'
+import { ContactUs } from './contactUs'
 
 
 export const MainPage = () => {
@@ -13,6 +14,8 @@ export const MainPage = () => {
         <BannerArticle/>
         <div className='border-b w-full'></div>
         <AstronomicalEvents/>
+        <div className='border-b w-full'></div>
+        <ContactUs />
         <div className='border-b w-full'></div>
       </section>
     </>

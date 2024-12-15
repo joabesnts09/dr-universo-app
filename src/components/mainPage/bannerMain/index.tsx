@@ -12,7 +12,7 @@ export const BannerMain = () => {
         </div>
 
         <div className='w-full max-w-[570px] flex items-center justify-center flex-col gap-6 sm:min-w-[400px]'>
-          <h1 className='text-3xl font-bold tracking-tighter text-center text-titlePrimary sm:text-5xl'>
+          <h1 className='text-3xl font-bold tracking-tighter text-center text-text sm:text-5xl'>
             Bem vindo ao Doutor Uiverso Blog!
           </h1>
           <p className='text-textPrimary text-xl text-center sm:text-2xl'>
