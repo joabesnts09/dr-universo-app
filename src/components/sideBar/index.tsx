@@ -1,4 +1,9 @@
 'use client'
+import panelLeft from '../../../public/image/icons/layout-sidebar-left-expand.svg'
+import menuHome from '../../../public/image/icons/home.svg'
+import bookMenu from '../../../public/image/icons/book.svg'
+import calendarCheck from '../../../public/image/icons/calendar-checked.svg'
+import contactPerson from '../../../public/image/icons/perm-contact-calendar.svg'
 import {
   Sheet,
   SheetTrigger,
@@ -8,13 +13,6 @@ import {
 } from '@/components/ui/sheet'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
-import {
-  BookMinus,
-  CalendarCheck,
-  Contact2,
-  Home,
-  PanelLeftOpenIcon,
-} from 'lucide-react'
 import LogoMain from '../../../public/image/logo/logo1.jpg'
 import Image from 'next/image'
 import {
@@ -66,8 +64,10 @@ export const SideBar = () => {
                   }`}
                   onClick={handleOpenSidebar}
                 >
-                  <PanelLeftOpenIcon
-                    className={`h-5 w-5 transition duration-500 ${
+                  <Image
+                    src={panelLeft}
+                    alt='icon panel left'
+                    className={`h-5 w-5 max-w-5 transition duration-500 ${
                       openSidebar && 'rotate-180'
                     }`}
                   />
@@ -116,7 +116,11 @@ export const SideBar = () => {
                     prefetch={false}
                   >
                     <div className='flex gap-4 items-center'>
-                      <Home className='h-5 w-5 mx-2' />
+                      <Image
+                        src={menuHome}
+                        alt='Icon Home'
+                        className='h-5 w-5 max-w-5 mx-2'
+                        />
                       <p className={`${!openSidebar && 'sr-only'}`}>Início</p>
                     </div>
                   </Link>
@@ -143,7 +147,11 @@ export const SideBar = () => {
                     prefetch={false}
                   >
                     <div className='flex gap-4 items-center'>
-                      <BookMinus className='h-5 w-5 mx-2' />
+                    <Image
+                        src={bookMenu}
+                        alt='Icon book menu'
+                        className='h-5 w-5 max-w-5 mx-2'
+                        />
                       <p className={`${!openSidebar && 'sr-only'}`}>Artigos</p>
                     </div>
                   </Link>
@@ -170,7 +178,11 @@ export const SideBar = () => {
                     prefetch={false}
                   >
                     <div className='flex gap-4 items-center'>
-                      <CalendarCheck className='h-5 w-5 mx-2' />
+                    <Image
+                        src={calendarCheck}
+                        alt='Icon calendar'
+                        className='h-5 w-5 max-w-5 mx-2'
+                        />
                       <p className={`text-nowrap ${!openSidebar && 'sr-only'}`}>
                         Calendário de Eventos
                       </p>
@@ -199,7 +211,11 @@ export const SideBar = () => {
                     prefetch={false}
                   >
                     <div className='flex gap-4 items-center'>
-                      <Contact2 className='h-5 w-5 mx-2' />
+                    <Image
+                        src={contactPerson}
+                        alt='Icon contact'
+                        className='h-5 w-5 max-w-5 mx-2'
+                        />
                       <p className={`${!openSidebar && 'sr-only'}`}>Contatos</p>
                     </div>
                   </Link>
@@ -224,7 +240,11 @@ export const SideBar = () => {
             <Sheet>
               <SheetTrigger asChild>
                 <Button size='icon' variant='outline' className='sm:hidden'>
-                  <PanelLeftOpenIcon />
+                <Image
+                    src={panelLeft}
+                    alt='icon panel left'
+                    className={`h-5 w-5 max-w-5 transition duration-500`}
+                  />
                   <span className='sr-only'>Open and Close Menu</span>
                 </Button>
               </SheetTrigger>
@@ -260,7 +280,11 @@ export const SideBar = () => {
                     className='flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground'
                     prefetch={false}
                   >
-                    <Home className='h-5 w-5 transition-all' />
+                    <Image
+                        src={menuHome}
+                        alt='Icon Home'
+                        className='h-5 w-5 max-w-5 transition-all'
+                      />
                     Início
                   </Link>
 
@@ -269,7 +293,11 @@ export const SideBar = () => {
                     className='flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground'
                     prefetch={false}
                   >
-                    <BookMinus className='h-5 w-5 transition-all' />
+                    <Image
+                        src={bookMenu}
+                        alt='Icon book menu'
+                        className='h-5 w-5 max-w-5 transition-all'
+                      />
                     Artigos
                   </Link>
 
@@ -278,7 +306,11 @@ export const SideBar = () => {
                     className='flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground'
                     prefetch={false}
                   >
-                    <CalendarCheck className='h-5 w-5 transition-all' />
+                    <Image
+                        src={calendarCheck}
+                        alt='Icon calendar'
+                        className='h-5 w-5 max-w-5 transition-all'
+                      />
                     Calendário de Eventos
                   </Link>
 
@@ -287,7 +319,11 @@ export const SideBar = () => {
                     className='flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground'
                     prefetch={false}
                   >
-                    <Contact2 className='h-5 w-5 transition-all' />
+                    <Image
+                        src={contactPerson}
+                        alt='Icon contact'
+                        className='h-5 w-5 max-w-5 transition-all'
+                      />
                     Contatos
                   </Link>
 
