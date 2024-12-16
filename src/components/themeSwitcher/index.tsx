@@ -1,10 +1,10 @@
 'use client'
-import sunIcon from '../../../public/image/icons/sun-outline.svg'
-import moonIcon from '../../../public/image/icons/moon-thin.svg'
 import { useTheme } from 'next-themes'
 import { Button } from '../ui/button'
 import { useEffect, useState } from 'react'
 import Image from 'next/image'
+import { SunIcon } from '../svg/sun'
+import { MoonIcon } from '../svg/moon'
 
 interface IThemeSwitcherProps {
   openSidebar: boolean
@@ -32,18 +32,12 @@ export const ThemeSwitcher = ({ openSidebar }: IThemeSwitcherProps) => {
             {
               theme === 'dark'? (
                 <>
-                  <Image
-                    src={moonIcon}
-                    alt='moon Icon'
-                    className='h-5 w-5 max-w-5' />
+                  <MoonIcon />
                   <p className='text-base font-bold text-nowrap'>Tema escuro</p>
                 </>
               ) : (
                 <>
-                  <Image
-                    src={sunIcon}
-                    alt='sun Icon'
-                    className='h-5 w-5 max-w-5' />
+                  <SunIcon />
                   <p className='text-base font-bold text-nowrap'>Tema claro</p>
                 </>
               )
@@ -62,23 +56,15 @@ export const ThemeSwitcher = ({ openSidebar }: IThemeSwitcherProps) => {
         }`}
               onClick={() => setTheme(theme === 'light' ? 'dark' : 'light')}
             >
-              <Image
-                src={moonIcon}
-                alt='sun Icon'
-                className={`absolute left-1 h-5 w-5 max-w-5 transition-opacity ${
+              <MoonIcon className={`absolute left-1 h-5 w-5 max-w-5 transition-opacity ${
                   theme === 'dark' ? 'opacity-100' : 'opacity-0'
-                }`}
-              />
+                }`}/>
 
               <div className='w-6 h-6 bg-white rounded-full shadow-md transition-transform'></div>
-
-              <Image
-                src={sunIcon}
-                alt='sun Icon'
-                className={`absolute right-1 h-5 w-5 max-w-5 transition-opacity ${
+                
+                <SunIcon className={`absolute right-1 h-5 w-5 max-w-5 transition-opacity ${
                   theme === 'dark' ? 'opacity-0' : 'opacity-100'
-                }`}
-              />
+                }`} />
             </div>
           </label>
         </div>
@@ -94,17 +80,9 @@ export const ThemeSwitcher = ({ openSidebar }: IThemeSwitcherProps) => {
           `}
         >
           {theme === 'light' ? (
-            <Image
-              className='w-5 h-5 max-w-5'
-              src={sunIcon}
-              alt='sun Icon'
-            />
+            <SunIcon />
           ) : (
-            <Image
-              className='w-5 h-5 max-w-5'
-              src={moonIcon}
-              alt='sun Icon'
-            />
+            <MoonIcon />
           )}
         </Button>
       )}

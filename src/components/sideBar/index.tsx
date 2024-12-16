@@ -1,9 +1,4 @@
 'use client'
-import panelLeft from '../../../public/image/icons/layout-sidebar-left-expand.svg'
-import menuHome from '../../../public/image/icons/home.svg'
-import bookMenu from '../../../public/image/icons/book.svg'
-import calendarCheck from '../../../public/image/icons/calendar-checked.svg'
-import contactPerson from '../../../public/image/icons/perm-contact-calendar.svg'
 import {
   Sheet,
   SheetTrigger,
@@ -24,12 +19,16 @@ import {
 import { ThemeSwitcher } from '../themeSwitcher'
 import { useState } from 'react'
 import useHandleModal from '@/hooks/useSideBar'
+import { PanelLeftIcon } from '../svg/panelLeft'
+import { HomeMenuIcon } from '../svg/menuHome'
+import { BookMenuIcon } from '../svg/bookMenu'
+import { CalendarCheckIcon } from '../svg/calendarCheck'
+import { ContactPersonIcon } from '../svg/contactPerson'
 
 export const SideBar = () => {
   const [openSidebar, setOpenSidebar] = useState<boolean>(false)
   const [pageSelected, setPageSelected] = useState<boolean>(false)
   const modalId: string = 'sidebarId'
-
 
   const handleOpenSidebar = () => {
     setOpenSidebar(!openSidebar)
@@ -64,15 +63,13 @@ export const SideBar = () => {
                   }`}
                   onClick={handleOpenSidebar}
                 >
-                  <Image
-                    src={panelLeft}
-                    alt='icon panel left'
-                    className={`h-5 w-5 max-w-5 transition duration-500 ${
+                  <PanelLeftIcon
+                    className={`h-5 w-5 max-w-5 \ transition duration-500 ${
                       openSidebar && 'rotate-180'
                     }`}
                   />
 
-                  <p className={`${!openSidebar && 'sr-only' }`}>
+                  <p className={`${!openSidebar && 'sr-only'}`}>
                     Abrir / Fechar Sidebar
                   </p>
                 </Button>
@@ -116,11 +113,7 @@ export const SideBar = () => {
                     prefetch={false}
                   >
                     <div className='flex gap-4 items-center'>
-                      <Image
-                        src={menuHome}
-                        alt='Icon Home'
-                        className='h-5 w-5 max-w-5 mx-2'
-                        />
+                      <HomeMenuIcon />
                       <p className={`${!openSidebar && 'sr-only'}`}>Início</p>
                     </div>
                   </Link>
@@ -147,11 +140,7 @@ export const SideBar = () => {
                     prefetch={false}
                   >
                     <div className='flex gap-4 items-center'>
-                    <Image
-                        src={bookMenu}
-                        alt='Icon book menu'
-                        className='h-5 w-5 max-w-5 mx-2'
-                        />
+                      <BookMenuIcon />
                       <p className={`${!openSidebar && 'sr-only'}`}>Artigos</p>
                     </div>
                   </Link>
@@ -178,11 +167,7 @@ export const SideBar = () => {
                     prefetch={false}
                   >
                     <div className='flex gap-4 items-center'>
-                    <Image
-                        src={calendarCheck}
-                        alt='Icon calendar'
-                        className='h-5 w-5 max-w-5 mx-2'
-                        />
+                      <CalendarCheckIcon />
                       <p className={`text-nowrap ${!openSidebar && 'sr-only'}`}>
                         Calendário de Eventos
                       </p>
@@ -211,11 +196,7 @@ export const SideBar = () => {
                     prefetch={false}
                   >
                     <div className='flex gap-4 items-center'>
-                    <Image
-                        src={contactPerson}
-                        alt='Icon contact'
-                        className='h-5 w-5 max-w-5 mx-2'
-                        />
+                      <ContactPersonIcon />
                       <p className={`${!openSidebar && 'sr-only'}`}>Contatos</p>
                     </div>
                   </Link>
@@ -240,9 +221,7 @@ export const SideBar = () => {
             <Sheet>
               <SheetTrigger asChild>
                 <Button size='icon' variant='outline' className='sm:hidden'>
-                <Image
-                    src={panelLeft}
-                    alt='icon panel left'
+                  <PanelLeftIcon
                     className={`h-5 w-5 max-w-5 transition duration-500`}
                   />
                   <span className='sr-only'>Open and Close Menu</span>
@@ -280,11 +259,7 @@ export const SideBar = () => {
                     className='flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground'
                     prefetch={false}
                   >
-                    <Image
-                        src={menuHome}
-                        alt='Icon Home'
-                        className='h-5 w-5 max-w-5 transition-all'
-                      />
+                    <HomeMenuIcon className='transition-all' />
                     Início
                   </Link>
 
@@ -293,11 +268,7 @@ export const SideBar = () => {
                     className='flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground'
                     prefetch={false}
                   >
-                    <Image
-                        src={bookMenu}
-                        alt='Icon book menu'
-                        className='h-5 w-5 max-w-5 transition-all'
-                      />
+                    <BookMenuIcon className='transition-all' />
                     Artigos
                   </Link>
 
@@ -306,11 +277,7 @@ export const SideBar = () => {
                     className='flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground'
                     prefetch={false}
                   >
-                    <Image
-                        src={calendarCheck}
-                        alt='Icon calendar'
-                        className='h-5 w-5 max-w-5 transition-all'
-                      />
+                    <CalendarCheckIcon className='transition-all' />
                     Calendário de Eventos
                   </Link>
 
@@ -319,15 +286,11 @@ export const SideBar = () => {
                     className='flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground'
                     prefetch={false}
                   >
-                    <Image
-                        src={contactPerson}
-                        alt='Icon contact'
-                        className='h-5 w-5 max-w-5 transition-all'
-                      />
+                    <ContactPersonIcon className='transition-all' />
                     Contatos
                   </Link>
 
-                  <ThemeSwitcher openSidebar={true}/>
+                  <ThemeSwitcher openSidebar={true} />
                 </nav>
               </SheetContent>
             </Sheet>
