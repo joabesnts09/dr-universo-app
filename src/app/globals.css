@@ -49,15 +49,13 @@ body {
     --titlePrimary: 270 65% 40%;
     --textPrimary: 270 50% 20%;
     --textSecondary: 270 60% 70%;
-    --border-color: #D3C3F3;
+    --border-color: #d3c3f3;
     --bgBtnColor: #be8dfd;
     --hoverBgBtn: #bc97ff;
-}
+  }
 
-
-  
   .dark {
-    --background: 0 0% 5%; 
+    --background: 0 0% 5%;
     --foreground: 270 30% 95%;
     --card: 270 25% 8%;
     --card-foreground: 270 30% 95%;
@@ -91,10 +89,10 @@ body {
     --sidebar-ring: 270 75% 58%;
     --titlePrimary: 270 65% 70%;
     --textPrimary: 270 45% 85%;
-    --border-color: #3A2A4C;
-    --bgBtnColor: #2E2038;
-    --hoverBgBtn: #4B3660;
-}
+    --border-color: #3a2a4c;
+    --bgBtnColor: #2e2038;
+    --hoverBgBtn: #4b3660;
+  }
 }
 
 @layer base {

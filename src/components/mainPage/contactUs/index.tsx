@@ -20,12 +20,12 @@ export const ContactUs = () => {
 
             <div className='flex flex-col gap-6 md:gap-4 pl-8 md:pl-0'>
               <div className='flex gap-1'>
-                <Image className='w-6' src={tiktokIcon} alt='' />
+                <Image className='w-6' src={tiktokIcon} alt='Tiktok Icon' />
                 <p className='text-lg text-textPrimary'>TikTok: @doutor_universo09</p>
               </div>
 
               <div className='flex gap-1'>
-                <Image className='w-6' src={kwaiIcon} alt='' />
+                <Image className='w-6' src={kwaiIcon} alt='Kwai Icon' />
                 <p className='text-lg text-textPrimary'>Kwai: @doutor_universo09</p>
               </div>
             </div>
@@ -37,12 +37,12 @@ export const ContactUs = () => {
 
             <div className='flex flex-col gap-6 md:gap-4 pl-8 md:pl-0'>
               <div className='flex gap-1'>
-                <Image className='w-6' src={linkedinIcon} alt='' />
+                <Image className='w-6' src={linkedinIcon} alt='likedin Icon' />
                 <p className='text-lg text-textPrimary'>Linkedin: @joabesnts09</p>
               </div>
 
               <div className='flex gap-1'>
-                <Image className='w-6' src={webIcon} alt='' />
+                <Image className='w-6' src={webIcon} alt='Web Icon' />
                 <p className='text-lg text-textPrimary'>Nosso portifólio</p>
               </div>
             </div>
