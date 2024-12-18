@@ -6,12 +6,13 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'apod.nasa.gov', // Domínio do site da NASA
+        hostname: 'apod.nasa.gov',
       },
       {
         protocol: 'https',
         hostname: 'www.nasa.gov',
       },
+      
     ],
   },
 };

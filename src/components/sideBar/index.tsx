@@ -1,4 +1,6 @@
 'use client'
+import { useRouter } from 'next/navigation'
+import { usePathname } from 'next/navigation'
 import {
   Sheet,
   SheetTrigger,
@@ -39,6 +41,14 @@ export const SideBar = () => {
 
   useHandleModal('sidebarId', setOpenSidebar)
 
+  const router = useRouter()
+  const pathname = usePathname()
+
+  const menuItems = [
+    { name: 'Home', path: '/' },
+    { name: 'Articles', path: '/articles' },
+  ]
+
   return (
     <>
       <div className='flex w-full flex-col '>
@@ -64,7 +74,7 @@ export const SideBar = () => {
                   onClick={handleOpenSidebar}
                 >
                   <PanelLeftIcon
-                    className={`h-5 w-5 max-w-5 \ transition duration-500 ${
+                    className={`h-5 w-5 max-w-5 transition duration-500 ${
                       openSidebar && 'rotate-180'
                     }`}
                   />
@@ -77,11 +87,13 @@ export const SideBar = () => {
 
               <div className='border-b w-full'></div>
               <Link
-                href='#'
+                href='/'
                 className={`w-full h-9 flex gap-4 bg-transparent text-lg items-center text-primary-foreground md:text-base`}
                 prefetch={false}
               >
-                <div className='flex gap-4 items-center'>
+                <div className={`flex gap-4 items-center 
+                  ${openSidebar && 'pl-2'}
+                  `}>
                   <Image
                     src={LogoMain}
                     alt='logo'
@@ -102,13 +114,14 @@ export const SideBar = () => {
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Link
-                    href='#'
+                    href='/'
                     className={`w-full h-9 flex gap-4 shrink-0 items-center rounded-lg  transition-colors hover:text-foreground hover:bg-hoverBgBtn ${
                       pageSelected
                         ? 'text-foreground bg-bgBtnColor rounded-lg'
                         : 'text-muted-foreground'
                     }
-                    ${openSidebar ? 'justify-start pl-[2px]' : 'justify-center'}
+                    ${openSidebar ? 'justify-start pl-4' : 'justify-center'}
+                    ${pathname === menuItems[0].path && 'bg-bgBtnColor'}
                   `}
                     prefetch={false}
                   >
@@ -129,13 +142,14 @@ export const SideBar = () => {
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Link
-                    href='#'
+                    href='/articles'
                     className={`w-full h-9 flex gap-4 shrink-0 items-center rounded-lg  transition-colors hover:text-foreground hover:bg-hoverBgBtn ${
                       pageSelected
                         ? 'text-foreground bg-bgBtnColor rounded-lg'
                         : 'text-muted-foreground'
                     }
-                    ${openSidebar ? 'justify-start pl-[2px]' : 'justify-center'}
+                    ${openSidebar ? 'justify-start pl-4' : 'justify-center'}
+                    ${pathname === menuItems[1].path && 'bg-bgBtnColor'}
                     `}
                     prefetch={false}
                   >
@@ -162,7 +176,7 @@ export const SideBar = () => {
                         ? 'text-foreground bg-bgBtnColor rounded-lg'
                         : 'text-muted-foreground'
                     }
-                    ${openSidebar ? 'justify-start pl-[2px]' : 'justify-center'}
+                    ${openSidebar ? 'justify-start pl-4' : 'justify-center'}
                     `}
                     prefetch={false}
                   >
@@ -191,7 +205,7 @@ export const SideBar = () => {
                         ? 'text-foreground bg-bgBtnColor rounded-lg'
                         : 'text-muted-foreground'
                     }
-                    ${openSidebar ? 'justify-start pl-[2px]' : 'justify-center'}
+                    ${openSidebar ? 'justify-start pl-4' : 'justify-center'}
                     `}
                     prefetch={false}
                   >
@@ -238,8 +252,10 @@ export const SideBar = () => {
                 <nav className='grid gap-6 text-lg font-medium'>
                   <div className='flex items-center justify-start gap-4'>
                     <Link
-                      href='#'
-                      className='w-10 h-10 flex bg-primary rounded-full text-lg items-center justify-center text-primary-foreground md:text-base'
+                      href='/'
+                      className={`w-10 h-10 flex bg-primary rounded-full text-lg items-center justify-center text-primary-foreground md:text-base
+                        ${pathname === menuItems[0].path && 'bg-bgBtnColor'}
+                        `}
                       prefetch={false}
                     >
                       <Image
@@ -255,8 +271,10 @@ export const SideBar = () => {
                   </div>
 
                   <Link
-                    href='#'
-                    className='flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground'
+                    href='/'
+                    className={`flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground
+                      ${pathname === menuItems[1].path && 'bg-bgBtnColor'}
+                      `}
                     prefetch={false}
                   >
                     <HomeMenuIcon className='transition-all' />
@@ -264,7 +282,7 @@ export const SideBar = () => {
                   </Link>
 
                   <Link
-                    href='#'
+                    href='/articles'
                     className='flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground'
                     prefetch={false}
                   >

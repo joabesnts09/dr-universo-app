@@ -1,5 +1,5 @@
-import tiktokIcon from '../../../../public/image/icons/tiktok.svg'
-import kwaiIcon from '../../../../public/image/icons/kwai.svg'
+import { KwaiIcon } from '@/components/svg/kwaiIcon'
+import { TiktokIcon } from '@/components/svg/tiiktokIcon'
 import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 
@@ -10,6 +10,7 @@ interface IEventCardProps {
   description: string
   tiktokLink: string
   kwaiLink: string
+  priority?: boolean
 }
 
 export const CardArticle = ({
@@ -19,7 +20,10 @@ export const CardArticle = ({
   description,
   tiktokLink,
   kwaiLink,
+
+  
 }: IEventCardProps) => {
+  
   return (
     <>
       <div className='max-w-md mx-auto bg-background border border-borderColor rounded-lg shadow-lg overflow-hidden'>
@@ -27,11 +31,11 @@ export const CardArticle = ({
 
         <Image
           src={image? image: 'https://via.placeholder.com/400x200'}
-          className='rounded-md'
+          className='rounded-t-md object-cover'
           alt={name}
-          layout="fill"
-          objectFit="cover"
-          unoptimized 
+          fill
+          priority
+          unoptimized
         />
         </div>
 
@@ -52,7 +56,8 @@ export const CardArticle = ({
               className='hover:scale-110 transition-transform'
               aria-label='TikTok'
             >
-              <Image className='w-6' src={tiktokIcon} alt='Tiktok Icon' />
+              {/* <img className='w-6' src={tiktokIcon} alt='Tiktok Icon' /> */}
+              <TiktokIcon className='w-6 h-6' />
             </a>
 
             <a
@@ -62,7 +67,8 @@ export const CardArticle = ({
               className='hover:scale-110 transition-transform'
               aria-label='Kwai'
             >
-              <Image className='w-6' src={kwaiIcon} alt='Kwai Icon' />
+              {/* <img className='w-6' src={kwaiIcon} alt='Kwai Icon' /> */}
+              <KwaiIcon className='w-6 h-6' />
             </a>
           </div>
         </div>
