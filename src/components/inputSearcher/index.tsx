@@ -19,6 +19,11 @@ export const InputSearcher = ({
   const handleSearch = () => {
     if (onSearch) onSearch(inputValue)
   }
+  const handleKeyPress = (e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'Enter') {
+      handleSearch();  
+    }
+  }
 
   return (
     <>
@@ -28,6 +33,7 @@ export const InputSearcher = ({
           value={inputValue}
           onChange={handleInputChange}
           placeholder={placeholder}
+          onKeyDown={handleKeyPress}
           className='w-full px-4 py-2 border border-gray-300 rounded-full focus:outline-none focus:ring-2 focus:ring-hoverBgBtn'
         />
         <button
