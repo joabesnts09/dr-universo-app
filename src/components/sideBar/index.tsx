@@ -249,13 +249,11 @@ export const SideBar = () => {
                   Menu mobile
                 </SheetDescription>
 
-                <nav className='grid gap-6 text-lg font-medium'>
-                  <div className='flex items-center justify-start gap-4'>
+                <nav className='grid gap-4 text-lg font-medium'>
+                  <div className='flex items-center justify-start gap-4 mb-3'>
                     <Link
                       href='/'
-                      className={`w-10 h-10 flex bg-primary rounded-full text-lg items-center justify-center text-primary-foreground md:text-base
-                        ${pathname === menuItems[0].path && 'bg-bgBtnColor'}
-                        `}
+                      className={`w-10 h-10 flex bg-primary rounded-full text-lg items-center justify-center text-primary-foreground md:text-base `}
                       prefetch={false}
                     >
                       <Image
@@ -272,8 +270,8 @@ export const SideBar = () => {
 
                   <Link
                     href='/'
-                    className={`flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground
-                      ${pathname === menuItems[1].path && 'bg-bgBtnColor'}
+                    className={`flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground rounded-lg py-1
+                      ${pathname === menuItems[0].path && 'bg-bgBtnColor'}
                       `}
                     prefetch={false}
                   >
@@ -283,7 +281,9 @@ export const SideBar = () => {
 
                   <Link
                     href='/articles'
-                    className='flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground'
+                    className={`flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground rounded-lg py-1
+                      ${pathname === menuItems[1].path && 'bg-bgBtnColor'}
+                      `}
                     prefetch={false}
                   >
                     <BookMenuIcon className='transition-all' />
@@ -292,7 +292,7 @@ export const SideBar = () => {
 
                   <Link
                     href='#'
-                    className='flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground'
+                    className='flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground rounded-lg py-1'
                     prefetch={false}
                   >
                     <CalendarCheckIcon className='transition-all' />
@@ -301,7 +301,7 @@ export const SideBar = () => {
 
                   <Link
                     href='#'
-                    className='flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground'
+                    className='flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground rounded-lg py-1'
                     prefetch={false}
                   >
                     <ContactPersonIcon className='transition-all' />
