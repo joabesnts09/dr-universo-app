@@ -1,8 +1,6 @@
 import { CardList } from './cardsList'
 
-
 export const ArticlesPage = () => {
-
 
   return (
     <>

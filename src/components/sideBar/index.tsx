@@ -47,6 +47,7 @@ export const SideBar = () => {
   const menuItems = [
     { name: 'Home', path: '/' },
     { name: 'Articles', path: '/articles' },
+    { name: 'Calendar', path: '/calendar' },
   ]
 
   return (
@@ -170,13 +171,14 @@ export const SideBar = () => {
               <Tooltip>
                 <TooltipTrigger asChild>
                   <Link
-                    href='#'
+                    href='/calendar'
                     className={`w-full h-9 flex gap-4 shrink-0 items-center rounded-lg  transition-colors hover:text-foreground hover:bg-hoverBgBtn ${
                       pageSelected
                         ? 'text-foreground bg-bgBtnColor rounded-lg'
                         : 'text-muted-foreground'
                     }
                     ${openSidebar ? 'justify-start pl-4' : 'justify-center'}
+                    ${pathname === menuItems[2].path && 'bg-bgBtnColor'}
                     `}
                     prefetch={false}
                   >
@@ -291,8 +293,10 @@ export const SideBar = () => {
                   </Link>
 
                   <Link
-                    href='#'
-                    className='flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground rounded-lg py-1'
+                    href='/calendar'
+                    className={`flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground rounded-lg py-1
+                      ${pathname === menuItems[2].path && 'bg-bgBtnColor'}
+                      `}
                     prefetch={false}
                   >
                     <CalendarCheckIcon className='transition-all' />
