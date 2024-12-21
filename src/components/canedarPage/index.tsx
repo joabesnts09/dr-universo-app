@@ -12,7 +12,8 @@ export const CalendarPage = () => {
               title="Eclipse Lunar" 
               date="20/12/2025" 
               time="19:00" 
-              highlightDate="20/12"
+              day='20'
+              month='12'
             />
         
           </div>

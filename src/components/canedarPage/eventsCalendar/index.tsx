@@ -1,18 +1,22 @@
 'use client'
 import { useTheme } from 'next-themes'
+import { EventModal } from '../eventModal'
 
 interface ICalendarCardProps {
   title: string
   date: string
   time: string
-  highlightDate: string
+  day: string
+  month: string
 }
 
 export const CalendarEvent = ({
+
   title,
   date,
   time,
-  highlightDate,
+  day,
+  month,
 }: ICalendarCardProps) => {
   const { theme } = useTheme()
 
@@ -44,7 +48,7 @@ export const CalendarEvent = ({
               theme === 'dark' ? 'text-white' : 'text-purple-600'
             }`}
           >
-            {highlightDate}
+            {day}<span className={theme === 'dark' ? 'text-purple-200' : 'text-purple-400'}>/</span>{month}
           </h2>
         </div>
 
@@ -67,7 +71,14 @@ export const CalendarEvent = ({
           </div>
 
           <div className='mt-4 flex gap-4 flex-col-reverse justify-between items-center'>
-            <button
+            <EventModal
+              title={title}
+              date={date}
+              time={time}
+              imgUrl='https://images-assets.nasa.gov/image/PIA00404/PIA00404~medium.jpg'
+              description="Aqui estão mais detalhes sobre o evento, como descrição completa, informações adicionais, etc."
+            />
+            {/* <button
               className={`w-full py-2 px-4 rounded-full font-medium shadow-md hover:shadow-lg ${
                 theme === 'dark'
                   ? 'bg-purple-100 text-purple-600 hover:bg-purple-200'
@@ -75,14 +86,14 @@ export const CalendarEvent = ({
               } transition-all`}
             >
               Saber mais
-            </button>
+            </button> */}
             <div
               className={`flex items-center gap-2 text-sm ${
                 theme === 'dark' ? 'text-gray-200' : 'text-gray-600'
               }`}
             >
               <span>📅</span>
-              <span>Adicione ao calendário</span>
+              <span>Veja mais detalhes sobre o evento.</span>
             </div>
           </div>
         </div>
