@@ -48,8 +48,13 @@ export const CardList = () => {
 
   return (
     <>
-      <div className='flex flex-col w-full gap-6'>
-        <InputSearcher onSearch={handleSearch}/>
+      <div className='flex flex-col w-full gap-6 mt-6 mb-10 lg:my-10'>
+        <div className='flex items-center justify-between'>
+          <h1 className='hidden lg:flex text-purple-600 dark:text-purple-200 text-3xl font-bold'>
+            Eventos Recentes
+          </h1>
+          <InputSearcher onSearch={handleSearch}/>
+        </div>
 
         <div className='border-b w-full'></div>
 
