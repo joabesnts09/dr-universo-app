@@ -82,7 +82,7 @@ export const BannerArticle = () => {
                   </div>
 
                   <div>
-                    <Link href='#' className='w-full'>
+                    <Link href='/articles' className='w-full'>
                       <Button className='w-full bg-btnViolet hover:bg-btnVioletHover transition-colors delay-100'>
                         <p className='text-lg font-bold text-white hover:text-white transition-colors delay-100'>
                           Ver mais...
@@ -109,7 +109,7 @@ export const BannerArticle = () => {
                   </div>
 
                   <div>
-                    <Link href='#' className='w-full'>
+                    <Link href='/articles' className='w-full'>
                       <Button className='w-full bg-btnViolet hover:bg-btnVioletHover transition-colors delay-100'>
                         <p className='text-lg font-bold text-white hover:text-white transition-colors delay-100'>
                           Ver mais...
@@ -136,7 +136,7 @@ export const BannerArticle = () => {
                   </div>
 
                   <div>
-                    <Link href='#' className='w-full'>
+                    <Link href='/articles' className='w-full'>
                       <Button className='w-full bg-btnViolet hover:bg-btnVioletHover transition-colors delay-100'>
                         <p className='text-lg font-bold text-white hover:text-white transition-colors delay-100'>
                           Ver mais...
@@ -147,8 +147,6 @@ export const BannerArticle = () => {
                 </div>
               </CarouselItem>
             </CarouselContent>
-            {/* <CarouselPrevious />
-            <CarouselNext /> */}
           </Carousel>
         </div>
 
@@ -175,14 +173,14 @@ export const BannerArticle = () => {
                     />
                   </div>
 
-                  <div className='flex items-center justify-center'>
+                  <div className='flex items-start justify-center h-[65px]'>
                     <h3 className='text-2xl font-bold tracking-tighter'>
                       A Origem dos Buracos Negros
                     </h3>
                   </div>
 
                   <div>
-                    <Link href='#' className='w-full'>
+                    <Link href='/articles' className='w-full'>
                       <Button className='w-full bg-btnViolet hover:bg-btnVioletHover transition-colors delay-100'>
                         <p className='text-lg font-bold text-white hover:text-white transition-colors delay-100'>
                           Ver mais...
@@ -202,14 +200,14 @@ export const BannerArticle = () => {
                     />
                   </div>
 
-                  <div className='flex items-center justify-center'>
+                  <div className='flex items-start justify-center h-[65px]'>
                     <h3 className='text-2xl font-bold tracking-tighter'>
                       Os Segredos das Galáxias Espirais
                     </h3>
                   </div>
 
                   <div>
-                    <Link href='#' className='w-full'>
+                    <Link href='/articles' className='w-full'>
                       <Button className='w-full bg-btnViolet hover:bg-btnVioletHover transition-colors delay-100'>
                         <p className='text-lg font-bold text-white hover:text-white transition-colors delay-100'>
                           Ver mais...
@@ -229,14 +227,14 @@ export const BannerArticle = () => {
                     />
                   </div>
 
-                  <div className='flex items-center justify-center'>
+                  <div className='flex items-start justify-center h-[65px]'>
                     <h3 className='text-2xl font-bold tracking-tighter'>
                       Os Maiores Eventos Astronômicos de 2024
                     </h3>
                   </div>
 
                   <div>
-                    <Link href='#' className='w-full'>
+                    <Link href='/articles' className='w-full'>
                       <Button className='w-full bg-btnViolet hover:bg-btnVioletHover transition-colors delay-100'>
                         <p className='text-lg font-bold text-white hover:text-white transition-colors delay-100'>
                           Ver mais...
@@ -256,14 +254,14 @@ export const BannerArticle = () => {
                     />
                   </div>
 
-                  <div className='flex items-center justify-center'>
+                  <div className='flex items-start justify-center h-[65px]'>
                     <h3 className='text-2xl font-bold tracking-tighter'>
                       Os Segredos das Galáxias Espirais
                     </h3>
                   </div>
 
                   <div>
-                    <Link href='#' className='w-full'>
+                    <Link href='/articles' className='w-full'>
                       <Button className='w-full bg-btnViolet hover:bg-btnVioletHover transition-colors delay-100'>
                         <p className='text-lg font-bold text-white hover:text-white transition-colors delay-100'>
                           Ver mais...
@@ -283,14 +281,14 @@ export const BannerArticle = () => {
                     />
                   </div>
 
-                  <div className='flex items-center justify-center'>
+                  <div className='flex items-start justify-center h-[65px]'>
                     <h3 className='text-2xl font-bold tracking-tighter'>
                       Os Maiores Eventos Astronômicos de 2024
                     </h3>
                   </div>
 
                   <div>
-                    <Link href='#' className='w-full'>
+                    <Link href='/articles' className='w-full'>
                       <Button className='w-full bg-btnViolet hover:bg-btnVioletHover transition-colors delay-100'>
                         <p className='text-lg font-bold text-white hover:text-white transition-colors delay-100'>
                           Ver mais...

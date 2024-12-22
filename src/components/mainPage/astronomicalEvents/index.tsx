@@ -7,6 +7,7 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
+import Link from 'next/link'
 
 export const AstronomicalEvents = () => {
   return (
@@ -86,12 +87,11 @@ export const AstronomicalEvents = () => {
                 </p>
 
                 <div className='flex gap-4 items-center justify-end'>
-                  <Button className='w-max bg-btnViolet hover:bg-btnVioletHover transition-colors delay-100 font-bold'>
-                    Ver mais...
-                  </Button>
-                  <Button className='w-max bg-btnViolet hover:bg-btnVioletHover transition-colors delay-100 font-bold'>
-                    Todos eventos
-                  </Button>
+                  <Link href='/calendar'>
+                    <Button className='w-max bg-btnViolet hover:bg-btnVioletHover transition-colors delay-100 font-bold'>
+                      Ver todos eventos
+                    </Button>
+                  </Link>
                 </div>
               </div>
 

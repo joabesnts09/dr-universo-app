@@ -39,6 +39,7 @@ export const SideBar = () => {
     setPageSelected(!pageSelected)
   }
 
+
   useHandleModal('sidebarId', setOpenSidebar)
 
   const router = useRouter()
@@ -198,10 +199,10 @@ export const SideBar = () => {
                 </TooltipContent>
               </Tooltip>
 
-              <Tooltip>
+              {/* <Tooltip>
                 <TooltipTrigger asChild>
                   <Link
-                    href='#'
+                    href='#contacts'
                     className={`w-full h-9 flex gap-4 shrink-0 items-center rounded-lg  transition-colors hover:text-foreground hover:bg-hoverBgBtn ${
                       pageSelected
                         ? 'text-foreground bg-bgBtnColor rounded-lg'
@@ -220,10 +221,11 @@ export const SideBar = () => {
                 <TooltipContent
                   side='right'
                   className={`${openSidebar && 'sr-only'}`}
+                  
                 >
                   Contatos
                 </TooltipContent>
-              </Tooltip>
+              </Tooltip> */}
             </TooltipProvider>
 
             <div className='border-b w-full'></div>
@@ -303,14 +305,14 @@ export const SideBar = () => {
                     Calendário de Eventos
                   </Link>
 
-                  <Link
+                  {/* <Link
                     href='#'
                     className='flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground rounded-lg py-1'
                     prefetch={false}
                   >
                     <ContactPersonIcon className='transition-all' />
                     Contatos
-                  </Link>
+                  </Link> */}
 
                   <ThemeSwitcher openSidebar={true} />
                 </nav>
