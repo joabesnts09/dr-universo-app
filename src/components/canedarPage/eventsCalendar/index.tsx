@@ -11,7 +11,6 @@ interface ICalendarCardProps {
 }
 
 export const CalendarEvent = ({
-
   title,
   date,
   time,

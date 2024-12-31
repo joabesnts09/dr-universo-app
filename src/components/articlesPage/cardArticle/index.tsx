@@ -6,12 +6,11 @@ import Image from 'next/image'
 
 interface IEventCardProps {
   name: string
-  date: string
+  date?: string
   image?: string
   description: string
   tiktokLink: string
   kwaiLink: string
-  priority?: boolean
 }
 
 export const CardArticle = ({
