@@ -7,7 +7,7 @@ import Image from 'next/image'
 interface IEventCardProps {
   name: string
   date?: string
-  image?: string
+  imgUrl?: string
   description: string
   tiktokLink: string
   kwaiLink: string
@@ -16,7 +16,7 @@ interface IEventCardProps {
 export const CardArticle = ({
   name,
   date,
-  image,
+  imgUrl,
   description,
   tiktokLink,
   kwaiLink,
@@ -26,7 +26,7 @@ export const CardArticle = ({
       <div className='max-w-md mx-auto bg-background border border-borderColor rounded-lg shadow-lg overflow-hidden flex flex-col'>
         <div className='relative h-48 bg-secondary'>
           <Image
-            src={image ? image : 'https://via.placeholder.com/400x200'}
+            src={imgUrl ? imgUrl : 'https://via.placeholder.com/400x200'}
             className='rounded-t-md object-cover'
             alt={name}
             fill
