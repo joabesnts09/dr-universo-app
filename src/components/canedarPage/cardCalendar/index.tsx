@@ -2,6 +2,7 @@
 
 import { useTheme } from 'next-themes'
 import { EventModal } from '../eventModal'
+import { NegativeEvent } from './negativeEvent'
 
 interface IEventDetailsModalProps {
   name: string
@@ -20,12 +21,21 @@ export const CardCalendar = ({
 }: IEventDetailsModalProps) => {
   const { theme } = useTheme()
 
+  const eventDate = new Date(dateEvent.split('-').reverse().join('-'))
+  const currentDate = new Date()
 
-  const truncatedText = description.length > 60 ? `${description.substring(0, 60)}...` : description
+  const isFutureEvent = eventDate > currentDate
+
+  const truncatedText =
+    description.length > 60 ? `${description.substring(0, 60)}...` : description
 
   return (
     <>
-      <div className='flex flex-col lg:flex-row w-full '>
+      <div
+        className={`relative flex flex-col lg:flex-row w-full ${
+          !isFutureEvent && 'border-b-8 border-red-500 rounded-b-[.8rem]'}`}
+      >
+        {!isFutureEvent && <NegativeEvent />}
         <div
           className={`w-full lg:w-1/3 p-6 flex items-center justify-center rounded-t-lg lg:rounded-tr-none lg:rounded-l-lg ${
             theme === 'dark'
@@ -34,7 +44,9 @@ export const CardCalendar = ({
           }`}
         >
           <h2 className='text-4xl font-extrabold tracking-tight text-center lg:text-left'>
-          {dateEvent.split('-')[0]}<span className='text-purple-400'>/</span>{dateEvent.split('-')[1]}
+            {dateEvent.split('-')[0]}
+            <span className='text-purple-400'>/</span>
+            {dateEvent.split('-')[1]}
           </h2>
         </div>
 
@@ -44,9 +56,7 @@ export const CardCalendar = ({
           } rounded-b-lg lg:rounded-b-none lg:rounded-r-lg`}
         >
           <div>
-            <h2 className='text-2xl font-bold text-purple-900 mb-2'>
-              {name}
-            </h2>
+            <h2 className='text-2xl font-bold text-purple-900 mb-2'>{name}</h2>
             <p className='text-gray-700'>{truncatedText}</p>
           </div>
 
