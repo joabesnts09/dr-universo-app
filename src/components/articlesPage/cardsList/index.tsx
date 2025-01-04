@@ -55,7 +55,7 @@ export const CardList = () => {
           <h1 className='hidden lg:flex text-purple-600 dark:text-purple-200 text-3xl font-bold'>
             Eventos Recentes
           </h1>
-          <InputSearcher onSearch={handleSearch} />
+          <InputSearcher onSearch={handleSearch} placeholder='Buscar Artigo...' />
         </div>
 
         <div className='border-b w-full'></div>
