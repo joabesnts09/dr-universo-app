@@ -13,6 +13,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
+
 interface IEventsProps {
   id: string
   name: string
@@ -111,7 +112,7 @@ export const AstronomicalEvents = () => {
         </div>
 
         <div className='hidden md:flex'>
-          
+
           <div className='flex w-full p-6 bg-slate-600/20 dark:bg-slate-500/5 rounded-lg justify-between items-center'>
             <div className='w-max'>
               <div className='w-full max-w-[450px] 2xl:max-w-[550px] '>
