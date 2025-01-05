@@ -2,6 +2,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import illustrationSpace from '../../../../public/image/svg/spaceAinimate.svg'
 import { Button } from '@/components/ui/button'
+import { AboutModal } from './aboutModal'
 
 export const BannerMain = () => {
   return (
@@ -20,9 +21,10 @@ export const BannerMain = () => {
             celestes em um só lugar. Descubra o universo de forma fascinante!
           </p>
           <Link className='w-full max-w-sm sm:max-w-none' href='#'>
-            <Button className='w-full bg-btnViolet hover:bg-btnVioletHover transition-colors delay-100 text-lg py-6'>
+            {/* <Button className='w-full bg-btnViolet hover:bg-btnVioletHover transition-colors delay-100 text-lg py-6'>
               <p className='font-semibold'>Discover Doctors</p>
-            </Button>
+            </Button> */}
+            <AboutModal />
           </Link>
         </div>
       </div>
