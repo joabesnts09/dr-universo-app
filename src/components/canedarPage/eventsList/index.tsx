@@ -1,8 +1,10 @@
 'use client'
+import spaceMan from '../../../../public/image/svg/spaceMan.svg'
 import { InputSearcher } from '@/components/inputSearcher'
 import { useEffect, useState } from 'react'
 import { CardCalendar } from '../cardCalendar'
 import { SkeletonCalendar } from '../skeletonCalendar'
+import Image from 'next/image'
 
 interface IEventsProps {
   id: string
@@ -74,6 +76,22 @@ export const EventsList = () => {
                 />
               ))}
         </div>
+
+        {eventsData.length === 0 && (
+          <div className='w-full flex flex-col gap-6 items-center justify-center'>
+            <h2 className='text-2xl font-bold tracking-tighter text-center text-text sm:text-5xl'>
+            &#x1F914; Nenhum evento encontrado!
+            </h2>
+            <div className='w-full sm:min-w-[400px] sm:max-w-[700px] lg:w-[60%]'>
+              <Image
+                className='w-full 2xl:w-[700px] object-cover'
+                src={spaceMan}
+                alt='Imagem de um astronauta'
+                priority
+              />
+            </div>
+          </div>
+        )}
       </div>
     </>
   )
