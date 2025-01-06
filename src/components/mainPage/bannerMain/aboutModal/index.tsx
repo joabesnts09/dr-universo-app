@@ -39,7 +39,7 @@ export const AboutModal = () => {
             </div>
 
             <Dialog.Description className='text-sm text-gray-600 dark:text-gray-400 mb-4'>
-              Aqui você pode acessar seus perfis nas redes sociais.
+              Aqui você pode acessar meus perfis nas redes sociais.
             </Dialog.Description>
 
             <div className='space-y-6'>
