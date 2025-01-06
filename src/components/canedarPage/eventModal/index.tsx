@@ -1,7 +1,6 @@
 'use client'
 import * as Dialog from '@radix-ui/react-dialog'
 import { useTheme } from 'next-themes'
-import Image from 'next/image'
 
 interface IEventDetailsModalProps {
   title: string

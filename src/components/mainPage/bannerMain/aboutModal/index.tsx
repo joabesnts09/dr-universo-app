@@ -1,12 +1,9 @@
 'use client'
 
 import * as Dialog from '@radix-ui/react-dialog'
-import { useTheme } from 'next-themes'
 import clsx from 'clsx'
-import { Button } from '@/components/ui/button'
 
 export const AboutModal = () => {
-  const { theme } = useTheme()
   return (
     <>
       <Dialog.Root>

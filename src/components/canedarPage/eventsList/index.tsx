@@ -29,8 +29,9 @@ export const EventsList = () => {
       setLoading(true)
 
       try {
-
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}api/events/`)
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_API_URL}api/events/`
+        )
 
         const data: IEventsProps[] = await response.json()
 
@@ -56,7 +57,10 @@ export const EventsList = () => {
           <h1 className='hidden lg:flex text-purple-600 dark:text-purple-200 text-3xl font-bold'>
             Eventos astronomicos de 2025
           </h1>
-          <InputSearcher onSearch={handleSearch} placeholder='Buscar Evento...' />
+          <InputSearcher
+            onSearch={handleSearch}
+            placeholder='Buscar Evento...'
+          />
         </div>
 
         <div className='border-b w-full'></div>
@@ -81,7 +85,7 @@ export const EventsList = () => {
         {eventsData.length === 0 && (
           <div className='w-full flex flex-col gap-6 items-center justify-center'>
             <h2 className='text-2xl font-bold tracking-tighter text-center text-text sm:text-5xl'>
-            &#x1F914; Nenhum evento encontrado!
+              &#x1F914; Nenhum evento encontrado!
             </h2>
             <div className='w-full sm:min-w-[400px] sm:max-w-[700px] lg:w-[60%]'>
               <Image

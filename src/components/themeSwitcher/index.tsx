@@ -2,7 +2,6 @@
 import { useTheme } from 'next-themes'
 import { Button } from '../ui/button'
 import { useEffect, useState } from 'react'
-import Image from 'next/image'
 import { SunIcon } from '../svg/sun'
 import { MoonIcon } from '../svg/moon'
 

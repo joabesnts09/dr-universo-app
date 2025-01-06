@@ -1,5 +1,5 @@
 'use client'
-import { useRouter } from 'next/navigation'
+
 import { usePathname } from 'next/navigation'
 import {
   Sheet,
@@ -46,7 +46,6 @@ export const SideBar = () => {
 
   useHandleModal('sidebarId', setOpenSidebar)
 
-  const router = useRouter()
   const pathname = usePathname()
 
   const menuItems = [

@@ -1,7 +1,6 @@
 import { SocialButton } from '@/components/socialButtom'
 import { KwaiIcon } from '@/components/svg/kwaiIcon'
 import { TiktokIcon } from '@/components/svg/tiiktokIcon'
-import { Button } from '@/components/ui/button'
 import Image from 'next/image'
 
 interface IEventCardProps {
