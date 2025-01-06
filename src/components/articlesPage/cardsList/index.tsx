@@ -4,7 +4,7 @@ import spaceMan from '../../../../public/image/svg/spaceMan.svg'
 import { useEffect, useState } from 'react'
 import { CardArticle } from '../cardArticle'
 import { InputSearcher } from '@/components/inputSearcher'
-import { SkeletonCard } from '@/components/skeletonCard'
+import { SkeletonCard } from '@/components/articlesPage/cardArticle/skeletonCard'
 import Image from 'next/image'
 
 interface ArticleData {
