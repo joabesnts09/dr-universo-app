@@ -28,18 +28,13 @@ import { CalendarCheckIcon } from '../svg/calendarCheck'
 
 export const SideBar = () => {
   const [openSidebar, setOpenSidebar] = useState<boolean>(false)
-  const [pageSelected, setPageSelected] = useState<boolean>(false)
   const [isSheetOpen, setSheetOpen] = useState<boolean>(false)
   const modalId: string = 'sidebarId'
 
   const handleOpenSidebar = () => {
     setOpenSidebar(!openSidebar)
   }
-  const handlePageMenu = () => {
-    setPageSelected(!pageSelected)
-  }
 
-  
   const handleSheetToggle = () => {
     setSheetOpen(!isSheetOpen)
   }
@@ -96,9 +91,11 @@ export const SideBar = () => {
                 className={`w-full h-9 flex gap-4 bg-transparent text-lg items-center text-primary-foreground md:text-base`}
                 prefetch={false}
               >
-                <div className={`flex gap-4 items-center 
+                <div
+                  className={`flex gap-4 items-center 
                   ${openSidebar && 'pl-2'}
-                  `}>
+                  `}
+                >
                   <Image
                     src={LogoMain}
                     alt='logo'
@@ -121,11 +118,7 @@ export const SideBar = () => {
                 <TooltipTrigger asChild>
                   <Link
                     href='/'
-                    className={`w-full h-9 flex gap-4 shrink-0 items-center rounded-lg  transition-colors hover:text-foreground hover:bg-hoverBgBtn ${
-                      pageSelected
-                        ? 'text-foreground bg-bgBtnColor rounded-lg'
-                        : 'text-muted-foreground'
-                    }
+                    className={`w-full h-9 flex gap-4 shrink-0 items-center rounded-lg  transition-colors hover:text-foreground hover:bg-hoverBgBtn 
                     ${openSidebar ? 'justify-start pl-4' : 'justify-center'}
                     ${pathname === menuItems[0].path && 'bg-bgBtnColor'}
                   `}
@@ -149,11 +142,7 @@ export const SideBar = () => {
                 <TooltipTrigger asChild>
                   <Link
                     href='/articles'
-                    className={`w-full h-9 flex gap-4 shrink-0 items-center rounded-lg  transition-colors hover:text-foreground hover:bg-hoverBgBtn ${
-                      pageSelected
-                        ? 'text-foreground bg-bgBtnColor rounded-lg'
-                        : 'text-muted-foreground'
-                    }
+                    className={`w-full h-9 flex gap-4 shrink-0 items-center rounded-lg  transition-colors hover:text-foreground hover:bg-hoverBgBtn 
                     ${openSidebar ? 'justify-start pl-4' : 'justify-center'}
                     ${pathname === menuItems[1].path && 'bg-bgBtnColor'}
                     `}
@@ -177,11 +166,7 @@ export const SideBar = () => {
                 <TooltipTrigger asChild>
                   <Link
                     href='/calendar'
-                    className={`w-full h-9 flex gap-4 shrink-0 items-center rounded-lg  transition-colors hover:text-foreground hover:bg-hoverBgBtn ${
-                      pageSelected
-                        ? 'text-foreground bg-bgBtnColor rounded-lg'
-                        : 'text-muted-foreground'
-                    }
+                    className={`w-full h-9 flex gap-4 shrink-0 items-center rounded-lg  transition-colors hover:text-foreground hover:bg-hoverBgBtn 
                     ${openSidebar ? 'justify-start pl-4' : 'justify-center'}
                     ${pathname === menuItems[2].path && 'bg-bgBtnColor'}
                     `}
@@ -202,7 +187,6 @@ export const SideBar = () => {
                   Calendário de Eventos
                 </TooltipContent>
               </Tooltip>
-
             </TooltipProvider>
 
             <div className='border-b w-full'></div>

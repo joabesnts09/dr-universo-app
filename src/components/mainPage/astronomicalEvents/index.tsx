@@ -24,7 +24,7 @@ interface IEventsProps {
 }
 
 export const AstronomicalEvents = () => {
-  const [eventsData, setEventsData] = useState<IEventsProps[]>([])
+
   const [filteredEvent, setFilteredEvent] = useState<IEventsProps | null>(null)
   const [loading, setLoading] = useState(true)
 
@@ -43,8 +43,6 @@ export const AstronomicalEvents = () => {
         )
 
         const data: IEventsProps[] = await response.json()
-
-        setEventsData(data)
 
         const currentDate = new Date()
 
