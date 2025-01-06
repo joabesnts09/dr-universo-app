@@ -29,6 +29,7 @@ import { CalendarCheckIcon } from '../svg/calendarCheck'
 export const SideBar = () => {
   const [openSidebar, setOpenSidebar] = useState<boolean>(false)
   const [pageSelected, setPageSelected] = useState<boolean>(false)
+  const [isSheetOpen, setSheetOpen] = useState<boolean>(false)
   const modalId: string = 'sidebarId'
 
   const handleOpenSidebar = () => {
@@ -38,6 +39,10 @@ export const SideBar = () => {
     setPageSelected(!pageSelected)
   }
 
+  
+  const handleSheetToggle = () => {
+    setSheetOpen(!isSheetOpen)
+  }
 
   useHandleModal('sidebarId', setOpenSidebar)
 
@@ -209,7 +214,7 @@ export const SideBar = () => {
 
         <div className='sm:hidden flex flex-col sm:gap-4 sm:py-4 sm:pl-14 '>
           <header className='fixed w-full top-0 z-30 flex h-14 items-center px-4 border-b bg-background gap-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6'>
-            <Sheet>
+            <Sheet open={isSheetOpen} onOpenChange={setSheetOpen}>
               <SheetTrigger asChild>
                 <Button size='icon' variant='outline' className='sm:hidden'>
                   <PanelLeftIcon
@@ -252,6 +257,7 @@ export const SideBar = () => {
                       ${pathname === menuItems[0].path && 'bg-bgBtnColor'}
                       `}
                     prefetch={false}
+                    onClick={handleSheetToggle}
                   >
                     <HomeMenuIcon className='transition-all' />
                     Início
@@ -263,6 +269,7 @@ export const SideBar = () => {
                       ${pathname === menuItems[1].path && 'bg-bgBtnColor'}
                       `}
                     prefetch={false}
+                    onClick={handleSheetToggle}
                   >
                     <BookMenuIcon className='transition-all' />
                     Artigos
@@ -274,6 +281,7 @@ export const SideBar = () => {
                       ${pathname === menuItems[2].path && 'bg-bgBtnColor'}
                       `}
                     prefetch={false}
+                    onClick={handleSheetToggle}
                   >
                     <CalendarCheckIcon className='transition-all' />
                     Calendário de Eventos
