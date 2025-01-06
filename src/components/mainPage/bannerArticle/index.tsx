@@ -28,7 +28,6 @@ export const BannerArticle = () => {
   const [articles, setArticles] = useState<IArticleData[]>([])
   const [loading, setLoading] = useState(true)
 
-  console.log(loading)
 
   useEffect(() => {
     const fetchData = async () => {

@@ -20,12 +20,12 @@ export const BannerMain = () => {
             Explore o cosmos com curiosidades, fenômenos astronômicos e eventos
             celestes em um só lugar. Descubra o universo de forma fascinante!
           </p>
-          <Link className='w-full max-w-sm sm:max-w-none' href='#'>
+          <div className='w-full max-w-sm sm:max-w-none'>
             {/* <Button className='w-full bg-btnViolet hover:bg-btnVioletHover transition-colors delay-100 text-lg py-6'>
               <p className='font-semibold'>Discover Doctors</p>
             </Button> */}
             <AboutModal />
-          </Link>
+          </div>
         </div>
       </div>
     </>

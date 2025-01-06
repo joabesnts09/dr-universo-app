@@ -10,10 +10,8 @@ export const AboutModal = () => {
   return (
     <>
       <Dialog.Root>
-        <Dialog.Trigger className='w-full'>
-          <Button className='w-full bg-btnViolet hover:bg-btnVioletHover transition-colors delay-100 text-lg py-6'>
-            <p className='font-semibold'>Discover Doctors</p>
-          </Button>
+        <Dialog.Trigger className='w-full h-max rounded-lg bg-btnViolet hover:bg-btnVioletHover transition-colors delay-100 text-lg py-4'>
+          <p className='font-semibold'>Discover Doctors</p>
         </Dialog.Trigger>
         <Dialog.Portal>
           <Dialog.Overlay
@@ -39,6 +37,11 @@ export const AboutModal = () => {
                 </button>
               </Dialog.Close>
             </div>
+
+            <Dialog.Description className='text-sm text-gray-600 dark:text-gray-400 mb-4'>
+              Aqui você pode acessar seus perfis nas redes sociais.
+            </Dialog.Description>
+
             <div className='space-y-6'>
               <div className='flex items-center p-4 rounded-lg border dark:border-gray-700 bg-gray-50 dark:bg-gray-700'>
                 <img
