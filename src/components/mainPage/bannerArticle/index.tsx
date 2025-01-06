@@ -12,6 +12,7 @@ import Link from 'next/link'
 import Autoplay from 'embla-carousel-autoplay'
 import { useEffect, useState } from 'react'
 import Articles from '../../../app/articles/page'
+import { SkeletonMainArticle } from './skeletonMainArticle'
 
 interface IArticleData {
   id: number
@@ -27,11 +28,15 @@ export const BannerArticle = () => {
   const [articles, setArticles] = useState<IArticleData[]>([])
   const [loading, setLoading] = useState(true)
 
+  console.log(loading)
+
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true)
       try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}api/articles/`)
+        const response = await fetch(
+          `${process.env.NEXT_PUBLIC_API_URL}api/articles/`
+        )
 
         const data: IArticleData[] = await response.json()
 
@@ -44,7 +49,7 @@ export const BannerArticle = () => {
     }
 
     fetchData()
-  }, [articles])
+  }, [])
 
   return (
     <>
@@ -69,38 +74,43 @@ export const BannerArticle = () => {
             }}
           >
             <CarouselContent>
-              {articles.slice(0, 3).map((article) => (
-                <CarouselItem key={article.id}>
-                  <div className='flex flex-col w-full gap-3 p-3 rounded-xl backdrop-blur-3xl bg-slate-600/20 dark:bg-slate-500/5'>
-                    <div className='rounded-xl overflow-hidden'>
-                      <Image
-                        className='w-full h-[250px] object-cover'
-                        src={article.imgUrl}
-                        alt={article.name || 'Article Image'}
-                        width={0} 
-                        height={0} 
-                        sizes='100vw'
-                      />
-                    </div>
+              {loading ? (
+                <SkeletonMainArticle />
+              ) : (
+                articles.slice(0, 3).map((article) => (
+                  <CarouselItem key={article.id}>
+                    <div className='flex flex-col w-full gap-3 p-3 rounded-xl backdrop-blur-3xl bg-slate-600/20 dark:bg-slate-500/5'>
+                      <div className='rounded-xl overflow-hidden'>
+                        <Image
+                          className='w-full h-[250px] object-cover'
+                          src={article.imgUrl}
+                          alt={article.name || 'Article Image'}
+                          width={0}
+                          height={0}
+                          sizes='100vw'
+                        />
+                      </div>
 
-                    <div className='flex items-center justify-center h-[96px]'>
-                      <h3 className='text-2xl font-bold tracking-tighter'>
-                        {article.name}
-                      </h3>
-                    </div>
+                      <div className='flex items-center justify-center h-[96px]'>
+                        <h3 className='text-2xl font-bold tracking-tighter'>
+                          {article.name}
+                        </h3>
+                      </div>
 
-                    <div>
-                      <Link href='/articles' className='w-full'>
-                        <Button className='w-full bg-btnViolet hover:bg-btnVioletHover transition-colors delay-100'>
-                          <p className='text-lg font-bold text-white hover:text-white transition-colors delay-100'>
-                            Ver mais...
-                          </p>
-                        </Button>
-                      </Link>
+                      <div>
+                        <Link href='/articles' className='w-full'>
+                          <Button className='w-full bg-btnViolet hover:bg-btnVioletHover transition-colors delay-100'>
+                            <p className='text-lg font-bold text-white hover:text-white transition-colors delay-100'>
+                              Ver mais...
+                            </p>
+                          </Button>
+                        </Link>
+                      </div>
                     </div>
-                  </div>
-                </CarouselItem>
-              ))}
+                  </CarouselItem>
+                ))
+              )}
+
             </CarouselContent>
           </Carousel>
         </div>
@@ -119,41 +129,45 @@ export const BannerArticle = () => {
             }}
           >
             <CarouselContent>
-              
-            {articles.slice(0, 5).map((article) => (
+              {loading
+                ? Array.from({ length: 3 }).map((_, index) => (
+                    <SkeletonMainArticle key={index} />
+                  ))
+                : articles.slice(0, 5).map((article) => (
+                    <CarouselItem
+                      key={article.id}
+                      className='md:basis-1/2 lg:basis-1/3'
+                    >
+                      <div className='flex flex-col w-full gap-3 p-3 rounded-xl backdrop-blur-3xl bg-slate-600/20 dark:bg-slate-500/5'>
+                        <div className='rounded-xl overflow-hidden'>
+                          <Image
+                            className='w-full h-[310px] md:h-[200px] lg:h-[170px] xl:h-[200px] 2xl:h-[250px] object-cover'
+                            src={article.imgUrl}
+                            alt={article.name || 'Article Image'}
+                            width={0}
+                            height={0}
+                            sizes='100vw'
+                          />
+                        </div>
 
-              <CarouselItem key={article.id} className='md:basis-1/2 lg:basis-1/3'>
-                <div className='flex flex-col w-full gap-3 p-3 rounded-xl backdrop-blur-3xl bg-slate-600/20 dark:bg-slate-500/5'>
-                <div className='rounded-xl overflow-hidden'>
-                      <Image
-                        className='w-full h-[310px] md:h-[200px] lg:h-[170px] xl:h-[200px] 2xl:h-[250px] object-cover'
-                        src={article.imgUrl}
-                        alt={article.name || 'Article Image'}
-                        width={0} 
-                        height={0} 
-                        sizes='100vw'
-                      />
-                    </div>
+                        <div className='flex items-start justify-center h-[96px]'>
+                          <h3 className='text-2xl font-bold tracking-tighter'>
+                            {article.name}
+                          </h3>
+                        </div>
 
-                  <div className='flex items-start justify-center h-[96px]'>
-                    <h3 className='text-2xl font-bold tracking-tighter'>
-                      {article.name}
-                    </h3>
-                  </div>
-
-                  <div>
-                    <Link href='/articles' className='w-full'>
-                      <Button className='w-full bg-btnViolet hover:bg-btnVioletHover transition-colors delay-100'>
-                        <p className='text-lg font-bold text-white hover:text-white transition-colors delay-100'>
-                          Ver mais...
-                        </p>
-                      </Button>
-                    </Link>
-                  </div>
-                </div>
-              </CarouselItem>
-            ))}
-
+                        <div>
+                          <Link href='/articles' className='w-full'>
+                            <Button className='w-full bg-btnViolet hover:bg-btnVioletHover transition-colors delay-100'>
+                              <p className='text-lg font-bold text-white hover:text-white transition-colors delay-100'>
+                                Ver mais...
+                              </p>
+                            </Button>
+                          </Link>
+                        </div>
+                      </div>
+                    </CarouselItem>
+                  ))}
             </CarouselContent>
             <CarouselPrevious />
             <CarouselNext />
