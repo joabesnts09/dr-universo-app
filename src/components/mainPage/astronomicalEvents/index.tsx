@@ -93,7 +93,6 @@ export const AstronomicalEvents = () => {
                     width={0}
                     height={0}
                     sizes='100vw'
-                    layout='responsive'
                   />
                 </div>
 
@@ -131,7 +130,6 @@ export const AstronomicalEvents = () => {
                     width={0}
                     height={0}
                     sizes='100vw'
-                    layout='responsive'
                   />
                 </div>
               </div>
