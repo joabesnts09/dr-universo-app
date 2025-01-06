@@ -25,7 +25,6 @@ import { PanelLeftIcon } from '../svg/panelLeft'
 import { HomeMenuIcon } from '../svg/menuHome'
 import { BookMenuIcon } from '../svg/bookMenu'
 import { CalendarCheckIcon } from '../svg/calendarCheck'
-import { ContactPersonIcon } from '../svg/contactPerson'
 
 export const SideBar = () => {
   const [openSidebar, setOpenSidebar] = useState<boolean>(false)
@@ -100,6 +99,7 @@ export const SideBar = () => {
                     src={LogoMain}
                     alt='logo'
                     className='h-9 w-9 rounded-sm shrink-0'
+                    priority
                   />
                   <p
                     className={`text-muted-foreground transition-colors hover:text-foreground text-nowrap ${
@@ -199,33 +199,6 @@ export const SideBar = () => {
                 </TooltipContent>
               </Tooltip>
 
-              {/* <Tooltip>
-                <TooltipTrigger asChild>
-                  <Link
-                    href='#contacts'
-                    className={`w-full h-9 flex gap-4 shrink-0 items-center rounded-lg  transition-colors hover:text-foreground hover:bg-hoverBgBtn ${
-                      pageSelected
-                        ? 'text-foreground bg-bgBtnColor rounded-lg'
-                        : 'text-muted-foreground'
-                    }
-                    ${openSidebar ? 'justify-start pl-4' : 'justify-center'}
-                    `}
-                    prefetch={false}
-                  >
-                    <div className='flex gap-4 items-center'>
-                      <ContactPersonIcon />
-                      <p className={`${!openSidebar && 'sr-only'}`}>Contatos</p>
-                    </div>
-                  </Link>
-                </TooltipTrigger>
-                <TooltipContent
-                  side='right'
-                  className={`${openSidebar && 'sr-only'}`}
-                  
-                >
-                  Contatos
-                </TooltipContent>
-              </Tooltip> */}
             </TooltipProvider>
 
             <div className='border-b w-full'></div>
@@ -264,6 +237,7 @@ export const SideBar = () => {
                         src={LogoMain}
                         alt='logo'
                         className='rounded-lg shrink-0'
+                        priority
                       />
                       <span className='sr-only'>Logo do site</span>
                     </Link>
@@ -304,15 +278,6 @@ export const SideBar = () => {
                     <CalendarCheckIcon className='transition-all' />
                     Calendário de Eventos
                   </Link>
-
-                  {/* <Link
-                    href='#'
-                    className='flex items-center gap-4 px-2.5 text-muted-foreground hover:text-foreground rounded-lg py-1'
-                    prefetch={false}
-                  >
-                    <ContactPersonIcon className='transition-all' />
-                    Contatos
-                  </Link> */}
 
                   <ThemeSwitcher openSidebar={true} />
                 </nav>
