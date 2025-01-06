@@ -11,7 +11,7 @@ export const AboutModal = () => {
     <>
       <Dialog.Root>
         <Dialog.Trigger className='w-full h-max rounded-lg bg-btnViolet hover:bg-btnVioletHover transition-colors delay-100 text-lg py-4'>
-          <p className='font-semibold'>Discover Doctors</p>
+          <p className='font-semibold'>Sobre o Doutor</p>
         </Dialog.Trigger>
         <Dialog.Portal>
           <Dialog.Overlay
