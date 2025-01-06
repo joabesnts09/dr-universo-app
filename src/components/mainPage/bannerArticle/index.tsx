@@ -31,7 +31,8 @@ export const BannerArticle = () => {
     const fetchData = async () => {
       setLoading(true)
       try {
-        const response = await fetch('http://127.0.0.1:8000/api/articles/')
+        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}api/articles/`)
+
         const data: IArticleData[] = await response.json()
 
         setArticles(data)
