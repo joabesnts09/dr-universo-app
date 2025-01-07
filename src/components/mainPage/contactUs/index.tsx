@@ -19,14 +19,18 @@ export const ContactUs = () => {
             <h3 className='text-xl font-bold tracking-tighter text-start text-[#210458] dark:text-textSecondary'>Nossas Redes</h3>
 
             <div className='flex flex-col gap-6 md:gap-4 pl-8 md:pl-0'>
-              <div className='flex gap-1'>
+              <div>
+                <a className='flex gap-1' href="https://www.tiktok.com/@doutor_universo09" target="_blank" rel="noopener noreferrer">
                 <Image className='w-6' src={tiktokIcon} alt='Tiktok Icon' />
                 <p className='text-lg text-textPrimary'>TikTok: @doutor_universo09</p>
+                </a>
               </div>
 
-              <div className='flex gap-1'>
+              <div>
+                <a className='flex gap-1' href="https://www.kwai.com/@doutor_universo09" target="_blank" rel="noopener noreferrer">
                 <Image className='w-6' src={kwaiIcon} alt='Kwai Icon' />
                 <p className='text-lg text-textPrimary'>Kwai: @doutor_universo09</p>
+                </a>
               </div>
             </div>
           </div>
@@ -36,14 +40,18 @@ export const ContactUs = () => {
             <h3 className='text-xl font-bold tracking-tighter text-start text-[#210458] dark:text-textSecondary'>Contatos Profissionais</h3>
 
             <div className='flex flex-col gap-6 md:gap-4 pl-8 md:pl-0'>
-              <div className='flex gap-1'>
+              <div>
+                <a className='flex gap-1' href="https://www.linkedin.com/in/joabe-santos-5a20a3206/" target="_blank" rel="noopener noreferrer">
                 <Image className='w-6' src={linkedinIcon} alt='likedin Icon' />
                 <p className='text-lg text-textPrimary'>Linkedin: @joabesnts09</p>
+                </a>
               </div>
 
-              <div className='flex gap-1'>
+              <div>
+                <a className='flex gap-1' href="https://www.linkedin.com/in/joabe-santos-5a20a3206/" target="_blank" rel="noopener noreferrer">
                 <Image className='w-6' src={webIcon} alt='Web Icon' />
                 <p className='text-lg text-textPrimary'>Nosso portifólio</p>
+                </a>
               </div>
             </div>
           </div>
