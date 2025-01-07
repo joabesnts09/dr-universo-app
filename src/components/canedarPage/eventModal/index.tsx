@@ -35,7 +35,7 @@ export const EventModal = ({
             } backdrop-blur-sm z-50`}
           />
           <Dialog.Content
-            className={`fixed top-1/2 left-1/2 w-full max-w-md p-8 rounded-xl shadow-lg transform -translate-x-1/2 -translate-y-1/2 ${
+            className={`fixed top-1/2 left-1/2 w-[90%] sm:w-full max-w-md p-8 rounded-xl shadow-lg transform -translate-x-1/2 -translate-y-1/2 ${
               theme === 'dark'
                 ? 'bg-card text-card-foreground'
                 : 'bg-white text-gray-800'
