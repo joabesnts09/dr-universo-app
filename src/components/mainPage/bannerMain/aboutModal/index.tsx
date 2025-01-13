@@ -42,7 +42,7 @@ export const AboutModal = () => {
             <div className='space-y-6'>
               <div className='flex items-center p-4 rounded-lg border dark:border-gray-700 bg-gray-50 dark:bg-gray-700'>
                 <img
-                  src='https://p16-sign-va.tiktokcdn.com/tos-maliva-avt-0068/4393c1ee0ede97c39fe96ce3a5c1cad9~c5_1080x1080.jpeg?lk3s=a5d48078&nonce=38419&refresh_token=b95c172c7047b8807f207894df9158f5&x-expires=1736258400&x-signature=qfVxOG6cISfre9Y2I%2BvKgahBn3s%3D&shp=a5d48078&shcp=81f88b70'
+                  src='http://aws-br-pic.kwai.net/bs2/overseaHead/20240831061504_BMTUwMDAxNjMzODYwMzg5_s.jpg?ocid=20211'
                   alt='Perfil TikTok'
                   className='w-14 h-14 rounded-full mr-4'
                 />
