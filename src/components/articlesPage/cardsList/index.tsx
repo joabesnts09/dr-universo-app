@@ -32,6 +32,17 @@ export const CardList = () => {
       try {
         const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}api/articles/`)
 
+        if (!response.ok) {
+          setArticles([])
+          return
+        }
+
+        const contentType = response.headers.get('content-type')
+        if (!contentType || !contentType.includes('application/json')) {
+          setArticles([])
+          return
+        }
+
         const data: ArticleData[] = await response.json()
 
         const lowerSearch = search.toLowerCase()
@@ -40,7 +51,7 @@ export const CardList = () => {
         )
         setArticles(filteredArticles)
       } catch (error) {
-        console.error('Erro ao buscar os dados:', error)
+        setArticles([])
       } finally {
         setLoading(false)
       }

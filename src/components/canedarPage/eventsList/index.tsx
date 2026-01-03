@@ -33,6 +33,17 @@ export const EventsList = () => {
           `${process.env.NEXT_PUBLIC_API_URL}api/events/`
         )
 
+        if (!response.ok) {
+          setEventsData([])
+          return
+        }
+
+        const contentType = response.headers.get('content-type')
+        if (!contentType || !contentType.includes('application/json')) {
+          setEventsData([])
+          return
+        }
+
         const data: IEventsProps[] = await response.json()
 
         const lowerSearch = search.toLowerCase()
@@ -41,7 +52,7 @@ export const EventsList = () => {
         )
         setEventsData(filteredArticles)
       } catch (error) {
-        console.error('Erro ao buscar os dados:', error)
+        setEventsData([])
       } finally {
         setLoading(false)
       }
