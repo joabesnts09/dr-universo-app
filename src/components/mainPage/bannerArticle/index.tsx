@@ -52,7 +52,7 @@ export const BannerArticle = () => {
         const data: IArticleData[] = await response.json()
 
         setArticles(data)
-      } catch (error) {
+      } catch {
         setArticles([])
       } finally {
         setLoading(false)

@@ -52,7 +52,7 @@ export const EventsList = () => {
           article.name.toLowerCase().includes(lowerSearch)
         )
         setEventsData(filteredArticles)
-      } catch (error) {
+      } catch {
         setEventsData([])
       } finally {
         setLoading(false)

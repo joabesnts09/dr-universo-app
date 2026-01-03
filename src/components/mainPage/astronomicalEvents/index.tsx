@@ -75,7 +75,7 @@ export const AstronomicalEvents = () => {
         } else {
           setFilteredEvent(null)
         }
-      } catch (error) {
+      } catch {
         setFilteredEvent(null)
       } finally {
         setLoading(false)
