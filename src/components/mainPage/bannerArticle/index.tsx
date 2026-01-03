@@ -33,8 +33,9 @@ export const BannerArticle = () => {
     const fetchData = async () => {
       setLoading(true)
       try {
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL || ''
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}api/articles/`
+          `${apiUrl}api/articles/`
         )
 
         if (!response.ok) {

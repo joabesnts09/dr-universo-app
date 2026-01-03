@@ -39,8 +39,9 @@ export const AstronomicalEvents = () => {
       setLoading(true)
 
       try {
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL || ''
         const response = await fetch(
-          `${process.env.NEXT_PUBLIC_API_URL}api/events/`
+          `${apiUrl}api/events/`
         )
 
         if (!response.ok) {

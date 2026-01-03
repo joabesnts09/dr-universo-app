@@ -30,7 +30,8 @@ export const CardList = () => {
     const fetchData = async () => {
       setLoading(true)
       try {
-        const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}api/articles/`)
+        const apiUrl = process.env.NEXT_PUBLIC_API_URL || ''
+        const response = await fetch(`${apiUrl}api/articles/`)
 
         if (!response.ok) {
           setArticles([])
